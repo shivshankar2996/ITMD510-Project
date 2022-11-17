@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="home_pane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeScreenController">
+	<children>
+		<Pane fx:id="home_admin_pane" layoutX="76.0" layoutY="29.0" onMouseClicked="#adminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="145.0" prefWidth="169.0">
+			<children>
+				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="24.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../images/001-manager.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="62.0" layoutY="122.0" text="Admin">
+					<font>
+						<Font name="System Bold" size="13.0" />
+					</font>
+				</Label>
+			</children>
+		</Pane>
+		<Pane fx:id="home_customer_pane" layoutX="358.0" layoutY="29.0" onMouseClicked="#customerClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="145.0" prefWidth="169.0">
+			<children>
+				<Label layoutX="56.0" layoutY="122.0" text="Customer">
+					<font>
+						<Font name="System Bold" size="13.0" />
+					</font>
+				</Label>
+				<ImageView fitHeight="116.0" fitWidth="122.0" layoutX="27.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../images/004-man.png" />
+					</image>
+				</ImageView>
+			</children>
+		</Pane>
+		<Pane fx:id="home_exit_pane" layoutX="76.0" layoutY="250.0" onMouseClicked="#exitClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="145.0" prefWidth="169.0">
+			<children>
+				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../images/002-exit.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="64.0" layoutY="122.0" text="Exit">
+					<font>
+						<Font name="System Bold" size="13.0" />
+					</font>
+				</Label>
+			</children>
+		</Pane>
+		<Pane fx:id="home_manager_pane" layoutX="358.0" layoutY="250.0" onMouseClicked="#managerClicked" onMouseEntered="#mouse_hover_4" onMouseExited="#mouse_exit_4" prefHeight="145.0" prefWidth="169.0">
+			<children>
+				<Label layoutX="57.0" layoutY="122.0" text="Manager">
+					<font>
+						<Font name="System Bold" size="13.0" />
+					</font>
+				</Label>
+      				<ImageView fitHeight="110.0" fitWidth="120.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      					<image>
+      						<Image url="@../images/manageadmin-1_adobespark.png" />
+      					</image>
+      				</ImageView>
+			</children>
+		</Pane>
+	</children>
+</AnchorPane>

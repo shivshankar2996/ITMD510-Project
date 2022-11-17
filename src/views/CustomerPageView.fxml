@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackepane_customerpageview_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerPageController">
+	<children>
+		<AnchorPane fx:id="customer_page_pane" prefHeight="500.0" prefWidth="600.0">
+			<!-- TODO Add Nodes -->
+			<children>
+				<Pane fx:id="reservation_pane" layoutX="27.0" layoutY="28.0" onMouseClicked="#reservationClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="182.0" prefWidth="200.0">
+					<children>
+						<ImageView fitHeight="150.0" fitWidth="180.0" layoutX="30.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../images/Reservation_adobespark.png" />
+							</image>
+						</ImageView>
+						<Label layoutX="60.0" layoutY="159.0" text="Book Room">
+							<font>
+								<Font name="System Bold" size="13.0" />
+							</font>
+						</Label>
+					</children>
+				</Pane>
+				<Pane fx:id="customer_manage_profile_pane" layoutX="342.0" layoutY="28.0" onMouseClicked="#customermanageprofileClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="182.0" prefWidth="200.0">
+					<children>
+						<ImageView fitHeight="150.0" fitWidth="180.0" layoutX="33.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../images/Manageprofile-2_adobespark.png" />
+							</image>
+						</ImageView>
+						<Label layoutX="53.0" layoutY="159.0" text="Manage Profile">
+							<font>
+								<Font name="System Bold" size="13.0" />
+							</font>
+						</Label>
+					</children>
+				</Pane>
+				<Pane fx:id="customer_page_logout_pane" layoutX="41.0" layoutY="263.0" onMouseClicked="#customerpagelogoutClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="182.0" prefWidth="200.0">
+					<children>
+						<ImageView fitHeight="150.0" fitWidth="180.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+							<image>
+								<Image url="@../images/logout-2_adobespark.jpg" />
+							</image>
+						</ImageView>
+						<Label layoutX="72.0" layoutY="160.0" text="Log Out">
+							<font>
+								<Font name="System Bold" size="13.0" />
+							</font>
+						</Label>
+					</children>
+				</Pane>
+            <Pane fx:id="availableroom_pane" layoutX="342.0" layoutY="263.0" onMouseClicked="#availableRoomClicked" onMouseEntered="#mouse_hover_4" onMouseExited="#mouse_exit_4" prefHeight="182.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="140.0" fitWidth="130.0" layoutX="33.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/available%20room-2_adobespark.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="50.0" layoutY="159.0" text="Available Rooms">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+			</children>
+		</AnchorPane>
+	</children>
+</StackPane>

@@ -174,7 +174,7 @@ public class CustomerModel extends DBConnect {
 
 	public Boolean getCredentials(String username, String password) {
 
-		String query = "SELECT * FROM customers WHERE username = ? and password= ?;";
+		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -191,7 +191,7 @@ public class CustomerModel extends DBConnect {
 
 	public Boolean getCustomerDetails(String username, String password) {
 
-		String query = "SELECT * FROM customers WHERE username = ? and password= ?;";
+		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -220,7 +220,7 @@ public class CustomerModel extends DBConnect {
 	public void getCustomerDetailsUsingName(String custname) {
 		
 //		CustomerModel custModel = null;
-		String query = "SELECT * FROM customers WHERE name = ?;";
+		String query = "SELECT * FROM customers_2711 WHERE name = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, custname);
 			ResultSet rs = stmt.executeQuery();

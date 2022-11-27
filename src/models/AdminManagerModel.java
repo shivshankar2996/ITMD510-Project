@@ -97,7 +97,7 @@ public class AdminManagerModel extends DBConnect {
 
 	public ObservableList<AdminManagerModel> getAdmins() {
 		ObservableList<AdminManagerModel> admins = FXCollections.observableArrayList();
-		String query = "SELECT id, name, email, status FROM admins";
+		String query = "SELECT id, name, email, status FROM admins_2711";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

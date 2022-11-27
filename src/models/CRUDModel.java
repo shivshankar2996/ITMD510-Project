@@ -164,7 +164,7 @@ public class CRUDModel extends DBConnect {
 
 	public Boolean getCredentials(String username, String password) {
 
-		String query = "SELECT * FROM admins WHERE username = ? and password = ?;";
+		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -183,7 +183,7 @@ public class CRUDModel extends DBConnect {
 
 	public Boolean getManagerCredentials(String username, String password) {
 
-		String query = "SELECT * FROM managers WHERE username = ? and password = ?;";
+		String query = "SELECT * FROM managers_2711 WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -202,7 +202,7 @@ public class CRUDModel extends DBConnect {
 
 	public Boolean getAdminDetails(String username, String password) {
 
-		String query = "SELECT * FROM admins WHERE username = ? and password = ?;";
+		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);

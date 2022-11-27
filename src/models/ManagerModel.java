@@ -216,7 +216,7 @@ public class ManagerModel extends DBConnect {
 
 	public List<ManagerModel> getCustomers() {
 		List<ManagerModel> customers = new ArrayList<>();
-		String query = "SELECT id, name, city, state, email, pincode, age FROM customers";
+		String query = "SELECT id, name, city, state, email, pincode, age FROM customers_2711";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
@@ -239,7 +239,7 @@ public class ManagerModel extends DBConnect {
 
 	public List<ManagerModel> getBooking() {
 		List<ManagerModel> bookings = new ArrayList<>();
-		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM bookings;";
+		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM bookings_2711;";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

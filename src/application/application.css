@@ -2,11 +2,11 @@
 
 .root{
 	-fx-font-weight:bold;
-     -fx-background-image: url("/images/img1.png");
+     -fx-background-image: url("/images/img1.jpg");
      -fx-cursor:pointer;  
    }
 .button{
-	     -fx-background-color: 	#DEB887;
+	     -fx-background-color: #b9edcf; 	/*#DEB887;*/
         -fx-font-color:white;
 }
 #home_admin_pane{

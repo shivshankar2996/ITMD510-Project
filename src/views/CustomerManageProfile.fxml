@@ -8,40 +8,40 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="customerstackepanemanageprofile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerManageProfileController">
+<StackPane fx:id="customerstackepanemanageprofile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerManageProfileController">
 	<children>
 
 		<AnchorPane fx:id="customermanageprofile" prefHeight="414.0" prefWidth="641.0">
 			<!-- TODO Add Nodes -->
 
 			<children>
-				<Label layoutX="48.0" layoutY="49.0" text="Name" />
-				<Label layoutX="48.0" layoutY="110.0" text="Username" />
-				<Label layoutX="48.0" layoutY="175.0" text="Password" />
-				<Label layoutX="346.0" layoutY="49.0" text="Email" />
-				<Label layoutX="48.0" layoutY="240.0" text="Age" />
-				<Label layoutX="346.0" layoutY="110.0" text="City" />
-				<Label layoutX="346.0" layoutY="175.0" text="State" />
-				<TextField fx:id="txtCustomerRegisterName" layoutX="130.0" layoutY="45.0" />
-				<TextField fx:id="txtCustomerRegisterUsername" layoutX="130.0" layoutY="110.0" />
-				<TextField fx:id="txtCustomerRegisterEmail" layoutX="428.0" layoutY="45.0" />
-				<PasswordField fx:id="txtCustomerRegisterPassword" layoutX="130.0" layoutY="175.0" />
-				<TextField fx:id="txtCustomerRegisterAge" layoutX="130.0" layoutY="240.0" />
-				<Label layoutX="346.0" layoutY="240.0" text="Pincode" />
-				<TextField fx:id="txtCustomerRegisterCity" layoutX="428.0" layoutY="110.0" />
-				<TextField fx:id="txtCustomerRegisterState" layoutX="428.0" layoutY="175.0" />
-				<TextField fx:id="txtCustomerRegisterPincode" layoutX="428.0" layoutY="240.0" />
-				<Button layoutX="146.0" layoutY="315.0" mnemonicParsing="false" onAction="#onCustomerProfileUpdate" prefHeight="39.0" prefWidth="162.0" text="Update">
+				<Label layoutX="41.0" layoutY="132.0" text="Name" textFill="#137c65" />
+				<Label layoutX="41.0" layoutY="193.0" text="Username" textFill="#137c65" />
+				<Label layoutX="41.0" layoutY="258.0" text="Password" textFill="#137c65" />
+				<Label layoutX="339.0" layoutY="132.0" text="Email" textFill="#137c65" />
+				<Label layoutX="41.0" layoutY="323.0" text="Age" textFill="#137c65" />
+				<Label layoutX="339.0" layoutY="193.0" text="City" textFill="#137c65" />
+				<Label layoutX="339.0" layoutY="258.0" text="State" textFill="#134c65" />
+				<TextField fx:id="txtCustomerRegisterName" layoutX="123.0" layoutY="128.0" />
+				<TextField fx:id="txtCustomerRegisterUsername" layoutX="123.0" layoutY="193.0" />
+				<TextField fx:id="txtCustomerRegisterEmail" layoutX="421.0" layoutY="128.0" />
+				<PasswordField fx:id="txtCustomerRegisterPassword" layoutX="123.0" layoutY="258.0" />
+				<TextField fx:id="txtCustomerRegisterAge" layoutX="123.0" layoutY="323.0" />
+				<Label layoutX="339.0" layoutY="323.0" text="Pincode" textFill="#134c65" />
+				<TextField fx:id="txtCustomerRegisterCity" layoutX="421.0" layoutY="193.0" />
+				<TextField fx:id="txtCustomerRegisterState" layoutX="421.0" layoutY="258.0" />
+				<TextField fx:id="txtCustomerRegisterPincode" layoutX="421.0" layoutY="323.0" />
+				<Button layoutX="139.0" layoutY="398.0" mnemonicParsing="false" onAction="#onCustomerProfileUpdate" prefHeight="39.0" prefWidth="162.0" text="Update" textFill="#134c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Button>
-				<Button layoutX="375.0" layoutY="315.0" mnemonicParsing="false" onAction="#onCustomerProfileReset" prefHeight="39.0" prefWidth="149.0" text="Reset">
+				<Button layoutX="368.0" layoutY="398.0" mnemonicParsing="false" onAction="#onCustomerProfileReset" prefHeight="39.0" prefWidth="149.0" text="Reset" textFill="#134c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Button>
-				<Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCustomerProfileBack" text="Back">
+				<Button layoutX="23.0" layoutY="34.0" mnemonicParsing="false" onAction="#onCustomerProfileBack" text="Back" textFill="#137c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>

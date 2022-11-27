@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackepane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPageController">
+<StackPane fx:id="stackepane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPageController">
 	<children>
 		<AnchorPane fx:id="admin_page_pane" prefHeight="500.0" prefWidth="600.0">
 			<children>
@@ -19,7 +19,7 @@
 								<Image url="@../images/available%20room-2_adobespark.jpg" />
 							</image>
 						</ImageView>
-						<Label layoutX="25.0" layoutY="162.0" text="Manage Available Rooms">
+						<Label layoutX="25.0" layoutY="162.0" text="Manage Available Rooms" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
@@ -33,7 +33,7 @@
 								<Image url="@../images/Manageprofile-1_adobespark.png" />
 							</image>
 						</ImageView>
-						<Label layoutX="59.0" layoutY="159.0" text="Manage Profile">
+						<Label layoutX="59.0" layoutY="159.0" text="Manage Profile" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
@@ -47,7 +47,7 @@
 								<Image url="@../images/logout-2_adobespark.jpg" />
 							</image>
 						</ImageView>
-						<Label layoutX="72.0" layoutY="160.0" text="Log Out">
+						<Label layoutX="72.0" layoutY="160.0" text="Log Out" textFill="#147a62">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>

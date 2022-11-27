@@ -7,38 +7,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
-<StackPane fx:id="customer_register_stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerRegisterController">
+
+<StackPane fx:id="customer_register_stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomerRegisterController">
 <children>
 
-<AnchorPane fx:id="customer_register_pane" prefHeight="414.0" prefWidth="641.0" >
+<AnchorPane fx:id="customer_register_pane" prefHeight="414.0" prefWidth="641.0">
    <children>
-      <Label layoutX="48.0" layoutY="49.0" text="Customer Name" />
-      <Label layoutX="48.0" layoutY="110.0" text="Customer Username" />
-      <Label layoutX="48.0" layoutY="175.0" text="Customer Password" />
-      <Label layoutX="346.0" layoutY="49.0" text="Customer Email" />
-      <Label layoutX="48.0" layoutY="240.0" text="Customer Age" />
-      <Label layoutX="346.0" layoutY="110.0" text="Customer City" />
-      <Label layoutX="346.0" layoutY="175.0" text="Customer State" />
-      <TextField fx:id="txtCustomerRegisterName" layoutX="160.0" layoutY="45.0" />
-      <TextField fx:id="txtCustomerRegisterUsername" layoutX="160.0" layoutY="110.0" />
-      <TextField fx:id="txtCustomerRegisterEmail" layoutX="440.0" layoutY="45.0" />
-      <PasswordField fx:id="txtCustomerRegisterPassword" layoutX="160.0" layoutY="175.0" />
-      <TextField fx:id="txtCustomerRegisterAge" layoutX="160.0" layoutY="240.0" />
-      <Label layoutX="346.0" layoutY="240.0" text="Pincode" />
-      <TextField fx:id="txtCustomerRegisterCity" layoutX="440.0" layoutY="110.0" />
-      <TextField fx:id="txtCustomerRegisterState" layoutX="440.0" layoutY="175.0" />
-      <TextField fx:id="txtCustomerRegisterPincode" layoutX="440.0" layoutY="240.0" />
-      <Button layoutX="146.0" layoutY="315.0" mnemonicParsing="false" onAction="#onCustomerRegisterSubmit" prefHeight="39.0" prefWidth="162.0" text="Submit">
+      <Label layoutX="33.0" layoutY="129.0" text="Customer Name" textFill="#137c65" />
+      <Label layoutX="33.0" layoutY="190.0" text="Customer Username" textFill="#137c65" />
+      <Label layoutX="33.0" layoutY="255.0" text="Customer Password" textFill="#137c65" />
+      <Label layoutX="331.0" layoutY="129.0" text="Customer Email" textFill="#137c65" />
+      <Label layoutX="33.0" layoutY="320.0" text="Customer Age" textFill="#137c65" />
+      <Label layoutX="331.0" layoutY="190.0" text="Customer City" textFill="#137c65" />
+      <Label layoutX="331.0" layoutY="255.0" text="Customer State" textFill="#137c65" />
+      <TextField fx:id="txtCustomerRegisterName" layoutX="145.0" layoutY="125.0" />
+      <TextField fx:id="txtCustomerRegisterUsername" layoutX="145.0" layoutY="190.0" />
+      <TextField fx:id="txtCustomerRegisterEmail" layoutX="425.0" layoutY="125.0" />
+      <PasswordField fx:id="txtCustomerRegisterPassword" layoutX="145.0" layoutY="255.0" />
+      <TextField fx:id="txtCustomerRegisterAge" layoutX="145.0" layoutY="320.0" />
+      <Label layoutX="331.0" layoutY="320.0" text="Pincode" textFill="#137c65" />
+      <TextField fx:id="txtCustomerRegisterCity" layoutX="425.0" layoutY="190.0" />
+      <TextField fx:id="txtCustomerRegisterState" layoutX="425.0" layoutY="255.0" />
+      <TextField fx:id="txtCustomerRegisterPincode" layoutX="425.0" layoutY="320.0" />
+      <Button layoutX="131.0" layoutY="395.0" mnemonicParsing="false" onAction="#onCustomerRegisterSubmit" prefHeight="39.0" prefWidth="162.0" text="Submit" textFill="#137c65">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="375.0" layoutY="315.0" mnemonicParsing="false" onAction="#onCustomerRegisterReset" prefHeight="39.0" prefWidth="149.0" text="Reset">
+      <Button layoutX="360.0" layoutY="395.0" mnemonicParsing="false" onAction="#onCustomerRegisterReset" prefHeight="39.0" prefWidth="149.0" text="Reset" textFill="#137c65">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCustomerRegisterBack" text="Back">
+      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#onCustomerRegisterBack" text="Back" textFill="#137c65">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

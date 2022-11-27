@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackepane_managerpageview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerPageController">
+<StackPane fx:id="stackepane_managerpageview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerPageController">
 	<children>
 
 		<AnchorPane fx:id="manager_anchor_pane" prefHeight="500.0" prefWidth="600.0">
@@ -20,7 +20,7 @@
 								<Image url="@../images/customer-1_adobespark.png" />
 							</image>
 						</ImageView>
-						<Label layoutX="48.0" layoutY="159.0" text="Manage Admin ">
+						<Label layoutX="48.0" layoutY="159.0" text="Manage Admin " textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
@@ -31,10 +31,10 @@
 					<children>
 						<ImageView fitHeight="150.0" fitWidth="180.0" layoutX="19.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../images/logout-2_adobespark.jpg" />
+								<Image url="@../images/logout.jpg" />
 							</image>
 						</ImageView>
-						<Label layoutX="70.0" layoutY="158.0" text="Logout">
+						<Label layoutX="70.0" layoutY="158.0" text="Logout" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
@@ -43,7 +43,7 @@
 				</Pane>
 				<Pane fx:id="managercustomer_pane" layoutX="344.0" layoutY="41.0" onMouseClicked="#manageCustomerClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="193.0" prefWidth="188.0">
 					<children>
-						<Label layoutX="24.0" layoutY="157.0" text="Customer Reservations">
+						<Label layoutX="24.0" layoutY="157.0" text="Customer Reservations" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>

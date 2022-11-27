@@ -174,13 +174,13 @@ public class CustomerModel extends DBConnect {
 
 	public Boolean getCredentials(String username, String password) {
 
-		String query = "SELECT * FROM hotel_reserv_customers WHERE custusername = ? and custpass= ?;";
+		String query = "SELECT * FROM customers WHERE username = ? and password= ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				setCustomerStatus(rs.getBoolean("custstatus"));
+				setCustomerStatus(rs.getBoolean("status"));
 				return true;
 			}
 		} catch (SQLException e) {
@@ -191,23 +191,23 @@ public class CustomerModel extends DBConnect {
 
 	public Boolean getCustomerDetails(String username, String password) {
 
-		String query = "SELECT * FROM hotel_reserv_customers WHERE custusername = ? and custpass = ?;";
+		String query = "SELECT * FROM customers WHERE username = ? and password= ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("custid"));
-				setCustomerStatus(rs.getBoolean("custstatus"));
-				setCustomerAge(rs.getInt("custage"));
-				setCustomerName(rs.getString("custname"));
-				setCustomerEmail(rs.getString("custemail"));
-				setCustomerCity(rs.getString("custcity"));
-				setCustomerState(rs.getString("custstate"));
-				setCustomerPassword(rs.getString("custpass"));
-				setCustomerUsername(rs.getString("custusername"));
-				setCustomerPincode(rs.getInt("custpincode"));
+				setId(rs.getInt("id"));
+				setCustomerStatus(rs.getBoolean("status"));
+				setCustomerAge(rs.getInt("age"));
+				setCustomerName(rs.getString("name"));
+				setCustomerEmail(rs.getString("email"));
+				setCustomerCity(rs.getString("city"));
+				setCustomerState(rs.getString("state"));
+				setCustomerPassword(rs.getString("password"));
+				setCustomerUsername(rs.getString("username"));
+				setCustomerPincode(rs.getInt("pincode"));
 				
 				return true;
 			}
@@ -220,21 +220,21 @@ public class CustomerModel extends DBConnect {
 	public void getCustomerDetailsUsingName(String custname) {
 		
 //		CustomerModel custModel = null;
-		String query = "SELECT * FROM hotel_reserv_customers WHERE custname = ?;";
+		String query = "SELECT * FROM customers WHERE name = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, custname);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				setId(rs.getInt("custid"));
-				setCustomerStatus(rs.getBoolean("custstatus"));
-				setCustomerAge(rs.getInt("custage"));
-				setCustomerName(rs.getString("custname"));
-				setCustomerEmail(rs.getString("custemail"));
-				setCustomerCity(rs.getString("custcity"));
-				setCustomerState(rs.getString("custstate"));
-				setCustomerPassword(rs.getString("custpass"));
-				setCustomerUsername(rs.getString("custusername"));
-				setCustomerPincode(rs.getInt("custpincode"));
+				setId(rs.getInt("id"));
+				setCustomerStatus(rs.getBoolean("status"));
+				setCustomerAge(rs.getInt("age"));
+				setCustomerName(rs.getString("name"));
+				setCustomerEmail(rs.getString("email"));
+				setCustomerCity(rs.getString("city"));
+				setCustomerState(rs.getString("state"));
+				setCustomerPassword(rs.getString("password"));
+				setCustomerUsername(rs.getString("username"));
+				setCustomerPincode(rs.getInt("pincode"));
 			}
 			
 		} catch (SQLException e) {

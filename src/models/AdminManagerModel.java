@@ -97,16 +97,16 @@ public class AdminManagerModel extends DBConnect {
 
 	public ObservableList<AdminManagerModel> getAdmins() {
 		ObservableList<AdminManagerModel> admins = FXCollections.observableArrayList();
-		String query = "SELECT adminid, adminname, adminemail,adminstatus FROM hotel_reserv_admin";
+		String query = "SELECT id, name, email, status FROM admins";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				AdminManagerModel admin = new AdminManagerModel();
 				// grab record data by table field name into ClientModel account object
-				admin.setAid(resultSet.getInt("adminid"));
-				admin.setAname(resultSet.getString("adminname"));
-				admin.setAemail(resultSet.getString("adminemail"));
-				admin.setAstatus(resultSet.getString("adminstatus"));
+				admin.setAid(resultSet.getInt("id"));
+				admin.setAname(resultSet.getString("name"));
+				admin.setAemail(resultSet.getString("email"));
+				admin.setAstatus(resultSet.getString("status"));
 //				admin.setActionButton(new Button("Make Admin"));
 				admins.add(admin); // add account data to arraylist
 			}
@@ -117,7 +117,7 @@ public class AdminManagerModel extends DBConnect {
 	}
 
 	public void updateTable(int id) {
-		String query = "update hotel_reserv_admin set adminstatus = true where adminid=" + id + ";";
+		String query = "update admins set status = true where id=" + id + ";";
 			try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			int count = stmt.executeUpdate();
 			if (count > 0) {

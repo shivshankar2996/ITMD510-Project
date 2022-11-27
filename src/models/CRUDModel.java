@@ -43,7 +43,6 @@ public class CRUDModel extends DBConnect {
 		this.admin = admin;
 	}
 
-	
 	/**
 	 * @return the adminName
 	 */
@@ -165,15 +164,15 @@ public class CRUDModel extends DBConnect {
 
 	public Boolean getCredentials(String username, String password) {
 
-		String query = "SELECT * FROM hotel_reserv_admin WHERE adminusername = ? and adminpass = ?;";
+		String query = "SELECT * FROM admins WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("adminid"));
-				setAdmin(rs.getBoolean("adminstatus"));
+				setId(rs.getInt("id"));
+				setAdmin(rs.getBoolean("status"));
 				return true;
 			}
 		} catch (SQLException e) {
@@ -181,17 +180,18 @@ public class CRUDModel extends DBConnect {
 		}
 		return false;
 	}
+
 	public Boolean getManagerCredentials(String username, String password) {
 
-		String query = "SELECT * FROM hotel_reserv_manager WHERE managerusername = ? and managerpass = ?;";
+		String query = "SELECT * FROM managers WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("managerid"));
-				setAdmin(rs.getBoolean("managerstatus"));
+				setId(rs.getInt("id"));
+				setAdmin(rs.getBoolean("status"));
 				return true;
 			}
 		} catch (SQLException e) {
@@ -202,24 +202,24 @@ public class CRUDModel extends DBConnect {
 
 	public Boolean getAdminDetails(String username, String password) {
 
-		String query = "SELECT * FROM hotel_reserv_admin WHERE adminusername = ? and adminpass = ?;";
+		String query = "SELECT * FROM admins WHERE username = ? and password = ?;";
 		try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("adminid"));
-				setAdmin(rs.getBoolean("adminstatus"));
-				setAdminAge(rs.getInt("adminage"));
-				setAdminName(rs.getString("adminname"));
-				setAdminEmail(rs.getString("adminemail"));
-				setAdminCity(rs.getString("admincity"));
-				setAdminState(rs.getString("adminstate"));
-				setAdminPassword(rs.getString("adminpass"));
-				setAdminUsername(rs.getString("adminusername"));
-				setAdminPincode(rs.getInt("adminpincode"));
-				
+				setId(rs.getInt("id"));
+				setAdmin(rs.getBoolean("status"));
+				setAdminAge(rs.getInt("age"));
+				setAdminName(rs.getString("name"));
+				setAdminEmail(rs.getString("email"));
+				setAdminCity(rs.getString("city"));
+				setAdminState(rs.getString("state"));
+				setAdminPassword(rs.getString("password"));
+				setAdminUsername(rs.getString("username"));
+				setAdminPincode(rs.getInt("pincode"));
+
 				return true;
 			}
 		} catch (SQLException e) {

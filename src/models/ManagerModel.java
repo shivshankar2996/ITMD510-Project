@@ -216,19 +216,19 @@ public class ManagerModel extends DBConnect {
 
 	public List<ManagerModel> getCustomers() {
 		List<ManagerModel> customers = new ArrayList<>();
-		String query = "SELECT custid, custname, custcity, custstate, custemail,custpincode, custage FROM hotel_reserv_customers";
+		String query = "SELECT id, name, city, state, email, pincode, age FROM customers";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				ManagerModel customer = new ManagerModel();
 				// grab record data by table field name into ClientModel account object
-				customer.setCid(resultSet.getInt("custid"));
-				customer.setCage(resultSet.getInt("custage"));
-				customer.setCpincode(resultSet.getInt("custpincode"));
-				customer.setCname(resultSet.getString("custname"));
-				customer.setCcity(resultSet.getString("custcity"));
-				customer.setCstate(resultSet.getString("custstate"));
-				customer.setCemail(resultSet.getString("custemail"));
+				customer.setCid(resultSet.getInt("id"));
+				customer.setCage(resultSet.getInt("age"));
+				customer.setCpincode(resultSet.getInt("pincode"));
+				customer.setCname(resultSet.getString("name"));
+				customer.setCcity(resultSet.getString("city"));
+				customer.setCstate(resultSet.getString("state"));
+				customer.setCemail(resultSet.getString("email"));
 				customers.add(customer); // add account data to arraylist
 			}
 		} catch (SQLException e) {
@@ -239,7 +239,7 @@ public class ManagerModel extends DBConnect {
 
 	public List<ManagerModel> getBooking() {
 		List<ManagerModel> bookings = new ArrayList<>();
-		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM hotel_reserv_booking;";
+		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM bookings;";
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

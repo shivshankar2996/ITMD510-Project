@@ -158,7 +158,7 @@ public class CustomerReservationController {
 		try {
 			stmt = conn.getConnection().createStatement();
 
-			String sql = "INSERT INTO bookings (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
+			String sql = "INSERT INTO bookings_2711 (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
 					+ customerPincode + ",'" + customerRoomtype + "'," + customerNoumberofPeople + ","
 					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + ",'" + localDate + "','"

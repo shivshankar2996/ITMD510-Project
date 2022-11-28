@@ -94,7 +94,7 @@ public class CustomerRegisterController {
 			stmt = conn.getConnection().createStatement();
 			// resultset query string to sort the pep field in descending order.
 
-			String sql = "INSERT INTO customers (username, password, name, age, email, city, state, pincode) VALUES ('"
+			String sql = "INSERT INTO customers_2711 (username, password, name, age, email, city, state, pincode) VALUES ('"
 					+ customerRegisterUsername + "','" + customerRegisterPassword + "','" + customerRegisterName + "',"
 					+ customerRegisterAge + ",'" + customerRegisterEmail + "','" + customerRegisterCity + "','"
 					+ customerRegisterState + "'," + customerRegisterPincode + ");";

@@ -150,9 +150,6 @@ public class CustomerReservationController {
 
 		int customerRoomPrice = this.txtRoomPrice.getText() == "" ? 0 : Integer.parseInt(this.txtRoomPrice.getText());
 
-		int customerServicefee = this.txtServiceFees.getText() == "" ? 0
-				: Integer.parseInt(this.txtServiceFees.getText());
-
 		int customerTotal = this.txtTotal.getText() == "" ? 0 : Integer.parseInt(this.txtTotal.getText());
 
 		LocalDate localDate = dateStartField.getValue();
@@ -161,10 +158,10 @@ public class CustomerReservationController {
 		try {
 			stmt = conn.getConnection().createStatement();
 
-			String sql = "INSERT INTO hotel_reserv_booking (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
+			String sql = "INSERT INTO bookings (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
 					+ customerPincode + ",'" + customerRoomtype + "'," + customerNoumberofPeople + ","
-					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + ",'" + localDate + "','"
+					+ customerRoomPrice + "," +  customerTotal + ",'" + localDate + "','"
 					+ endDate + "'," + customerRoomNumber + ");";
 
 			String updateSql = "update hotel_reserv_rooms set roomstatus = 'busy' where roomnumber ="

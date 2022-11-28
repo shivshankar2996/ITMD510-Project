@@ -96,7 +96,7 @@ public class AdminRegisterController {
 				return;
 			}
 
-			String sql = "INSERT INTO hotel_reserv_admin (adminusername, adminpass, adminname, adminage, adminemail, admincity, adminstate, adminpincode, adminstatus) VALUES ('"
+			String sql = "INSERT INTO admins (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ adminRegisterUsername + "','" + adminRegisterPassword + "','" + adminRegisterName + "',"
 					+ adminRegisterAge + ",'" + adminRegisterEmail + "','" + adminRegisterCity + "','"
 					+ adminRegisterState + "'," + adminRegisterPincode + ", false );";

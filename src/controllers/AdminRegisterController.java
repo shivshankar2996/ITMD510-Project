@@ -96,7 +96,7 @@ public class AdminRegisterController {
 				return;
 			}
 
-			String sql = "INSERT INTO admins (username, password, name, age, email, city, state, pincode, status) VALUES ('"
+			String sql = "INSERT INTO admins_2711 (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ adminRegisterUsername + "','" + adminRegisterPassword + "','" + adminRegisterName + "',"
 					+ adminRegisterAge + ",'" + adminRegisterEmail + "','" + adminRegisterCity + "','"
 					+ adminRegisterState + "'," + adminRegisterPincode + ", false );";

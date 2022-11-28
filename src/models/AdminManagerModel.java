@@ -117,7 +117,7 @@ public class AdminManagerModel extends DBConnect {
 	}
 
 	public void updateTable(int id) {
-		String query = "update admins set status = true where id=" + id + ";";
+		String query = "update admins_2711 set status = true where id=" + id + ";";
 			try (PreparedStatement stmt = connection.prepareStatement(query)) {
 			int count = stmt.executeUpdate();
 			if (count > 0) {

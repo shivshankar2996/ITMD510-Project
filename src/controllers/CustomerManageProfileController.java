@@ -109,12 +109,12 @@ public class CustomerManageProfileController implements Initializable {
 			int age = txtCustomerRegisterAge.getText().equals("") ? 0
 					: Integer.parseInt(txtCustomerRegisterAge.getText());
 
-			sql = "update hotel_reserv_customers set custpass='" + txtCustomerRegisterPassword.getText()
-					+ "', custusername='" + txtCustomerRegisterUsername.getText() + "',custname='"
-					+ txtCustomerRegisterName.getText() + "',custpincode=" + pinCode + ",custstate='"
-					+ txtCustomerRegisterState.getText() + "',custcity='" + txtCustomerRegisterCity.getText()
-					+ "',custemail='" + txtCustomerRegisterEmail.getText() + "',custage=" + age
-					+ " where custusername='" + this.loginUserName + "' ;";
+			sql = "update customers_2711 set password='" + txtCustomerRegisterPassword.getText()
+					+ "', username='" + txtCustomerRegisterUsername.getText() + "',name='"
+					+ txtCustomerRegisterName.getText() + "',pincode=" + pinCode + ",state='"
+					+ txtCustomerRegisterState.getText() + "',city='" + txtCustomerRegisterCity.getText()
+					+ "',email='" + txtCustomerRegisterEmail.getText() + "',age=" + age
+					+ " where username='" + this.loginUserName + "' ;";
 
 			int count = stmt.executeUpdate(sql);
 			if (count > 0) {

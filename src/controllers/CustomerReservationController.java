@@ -151,20 +151,20 @@ public class CustomerReservationController {
 		int customerRoomPrice = this.txtRoomPrice.getText() == "" ? 0 : Integer.parseInt(this.txtRoomPrice.getText());
 
 		int customerTotal = this.txtTotal.getText() == "" ? 0 : Integer.parseInt(this.txtTotal.getText());
-
+		int customerServicefee = this.txtServiceFees.getText() == "" ? 0 : Integer.parseInt(this.txtServiceFees.getText());
 		LocalDate localDate = dateStartField.getValue();
 		LocalDate endDate = dateEndField.getValue();
 
 		try {
 			stmt = conn.getConnection().createStatement();
 
-			String sql = "INSERT INTO bookings (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, total, startdate, enddate, roomnumber) VALUES ('"
+			String sql = "INSERT INTO bookings (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
 					+ customerPincode + ",'" + customerRoomtype + "'," + customerNoumberofPeople + ","
-					+ customerRoomPrice + "," +  customerTotal + ",'" + localDate + "','"
+					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + ",'" + localDate + "','"
 					+ endDate + "'," + customerRoomNumber + ");";
 
-			String updateSql = "update hotel_reserv_rooms set roomstatus = 'busy' where roomnumber ="
+			String updateSql = "update rooms_2711 set roomstatus = 'busy' where roomnumber ="
 					+ customerRoomNumber + ";";
 			int c = stmt.executeUpdate(sql);
 			int c2 = stmt.executeUpdate(updateSql);

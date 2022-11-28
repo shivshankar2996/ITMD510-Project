@@ -114,11 +114,11 @@ public class AdminManageProfileController implements Initializable {
 					: Integer.parseInt(txtAdminRegisterPincode.getText());
 			int age = txtAdminRegisterAge.getText().equals("") ? 0 : Integer.parseInt(txtAdminRegisterAge.getText());
 
-			sql = "update hotel_reserv_admin set adminpass='" + txtAdminRegisterPassword.getText() + "', adminusername='"
-					+ txtAdminRegisterUsername.getText() + "',adminname='" + txtAdminRegisterName.getText()
-					+ "',adminpincode=" + pinCode + ",adminstate='" + txtAdminRegisterState.getText() + "',admincity='"
-					+ txtAdminRegisterCity.getText() + "',adminemail='" + txtAdminRegisterEmail.getText()
-					+ "',adminage=" + age + " where adminusername='" + this.loginUserName + "' ;";
+			sql = "update admin_2711 set password='" + txtAdminRegisterPassword.getText() + "', username='"
+					+ txtAdminRegisterUsername.getText() + "',name='" + txtAdminRegisterName.getText()
+					+ "',pincode=" + pinCode + ",state='" + txtAdminRegisterState.getText() + "',city='"
+					+ txtAdminRegisterCity.getText() + "',email='" + txtAdminRegisterEmail.getText()
+					+ "',age=" + age + " where username='" + this.loginUserName + "' ;";
 
 			int count = stmt.executeUpdate(sql);
 			if (count > 0) {

@@ -84,7 +84,7 @@ public class AdminAvailableRoomController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 
-		String query = "SELECT * FROM  hotel_reserv_rooms";
+		String query = "SELECT * FROM  rooms_2711";
 		roomList = roomModel.getRooms(query);
 		loadData(query);
 	}
@@ -132,7 +132,7 @@ public class AdminAvailableRoomController implements Initializable {
 				alert.setHeaderText("Modication");
 				alert.setContentText("Record updated successfully!");
 				alert.showAndWait();
-				String query = "SELECT * FROM  hotel_reserv_rooms where 1";
+				String query = "SELECT * FROM  rooms_2711 where 1";
 				roomList = roomModel.getRooms(query);
 				loadData(query);
 			} else {
@@ -148,7 +148,7 @@ public class AdminAvailableRoomController implements Initializable {
 	@FXML
 	public void onAvailableRooms() {
 		txtSearch.clear();
-		String query = "SELECT * FROM  hotel_reserv_rooms";
+		String query = "SELECT * FROM  rooms_2711";
 		roomList = roomModel.getRooms(query);
 		loadData(query);
 	}
@@ -160,7 +160,7 @@ public class AdminAvailableRoomController implements Initializable {
 		if (searchText == "" || searchText == null) {
 			handleDialog();
 		} else {
-			String query = "SELECT * FROM  hotel_reserv_rooms where roomnumber =" + Integer.parseInt(searchText) + ";";
+			String query = "SELECT * FROM  rooms_2711 where roomnumber =" + Integer.parseInt(searchText) + ";";
 			roomList = roomModel.getRooms(query);
 			loadData(query);
 		}

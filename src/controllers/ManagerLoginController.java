@@ -75,7 +75,9 @@ public class ManagerLoginController implements Initializable {
 			return;
 		}
 		try {
-			if (model.isAdmin() && isValid) {
+			//if (model.isAdmin() && isValid) {
+			if (isValid) {
+
 				// If user is admin, inflate admin view
 				viewr.handleRouting("/views/ManagerPageView.fxml", manager_view_pane,"Manager Home");
 

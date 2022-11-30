@@ -42,7 +42,8 @@ public class AdminLoginController {
 	public void onAdminLogin() {
 		String username = this.txtAdminUsername.getText();
 		String password = this.txtAdminPassword.getText();
-
+System.out.println(password);
+System.out.println(username);
 		// Validations
 		if (username == null || username.trim().equals("")) {
 			lblError.setText("Username Cannot be empty or spaces");
@@ -77,12 +78,17 @@ public class AdminLoginController {
 	private void checkCredentials(String username, String password) {
 		// TODO Auto-generated method stub
 		Boolean isValid = model.getCredentials(username, password);
+		System.out.println(username);
+		System.out.println(password);
+		System.out.println(model.isAdmin());
+		System.out.println(isValid);
 		if (!isValid) {
 			lblError.setText("User does not exist!");
 			return;
 		}
 		try {
-			if (model.isAdmin() && isValid) {
+			//if (model.isAdmin() && isValid) {
+			if (isValid) {
 				// If user is admin, inflate admin view
 				viewr.handleRoutingAdminPage("/views/AdminPageView.fxml", admin_view_pane, username,  password, "Admin Home");
 			}

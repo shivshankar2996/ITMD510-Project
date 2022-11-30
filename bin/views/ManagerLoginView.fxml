@@ -4,34 +4,45 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="manager_view_pane" prefHeight="410.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerLoginController">
 	<children>
-		<Label layoutX="171.0" layoutY="145.0" prefHeight="25.0" prefWidth="63.0" text="Password" textFill="#137c65">
-			<font>
-				<Font name="System Bold" size="13.0" />
-			</font>
-		</Label>
-		<Label layoutX="171.0" layoutY="78.0" prefHeight="25.0" prefWidth="63.0" text="Username" textFill="#137c65">
-			<font>
-				<Font name="System Bold" size="13.0" />
-			</font>
-		</Label>
-		<Button layoutX="220.0" layoutY="214.0" mnemonicParsing="false" onAction="#onManagerLogin" prefHeight="25.0" prefWidth="150.0" text="Login" textFill="#137c65">
+		<Button layoutX="437.0" layoutY="214.0" mnemonicParsing="false" onAction="#onManagerLogin" prefHeight="25.0" prefWidth="150.0" text="Login" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
 			</font>
 		</Button>
-		<TextField fx:id="txtManagerUsername" layoutX="266.0" layoutY="78.0" />
-		<PasswordField fx:id="txtManagerPassword" layoutX="266.0" layoutY="145.0" />
+		<TextField fx:id="txtManagerUsername" layoutX="437.0" layoutY="90.0" />
+		<PasswordField fx:id="txtManagerPassword" layoutX="437.0" layoutY="157.0" />
 
 		<Label fx:id="lblError" layoutX="43.0" layoutY="264.0" textFill="#dd1126" />
-		<Button layoutX="31.0" layoutY="23.0" mnemonicParsing="false" onAction="#onManagerBackButton" prefHeight="27.0" prefWidth="54.0" text="Back" textFill="#137c65">
+		<Button layoutX="294.0" layoutY="20.0" mnemonicParsing="false" onAction="#onManagerBackButton" prefHeight="27.0" prefWidth="54.0" text="Back" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
 			</font>
 		</Button>
+      <AnchorPane prefHeight="416.0" prefWidth="268.0" styleClass="loginbg" stylesheets="@../application/application.css">
+         <children>
+            <ImageView fitHeight="210.0" fitWidth="162.0" layoutX="53.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/LoginIconAdmin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="410.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/UserID.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="411.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Password.png" />
+         </image>
+      </ImageView>
 	</children>
 </AnchorPane>

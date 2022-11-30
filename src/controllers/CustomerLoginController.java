@@ -34,7 +34,8 @@ public class CustomerLoginController {
 		lblError.setText("");
 		String username = this.txtCustomerUsername.getText();
 		String password = this.txtCustomerPassword.getText();
-
+/*System.out.println(username);
+System.out.println(password);*/
 		// Validations
 		if (username == null || username.trim().equals("")) {
 			lblError.setText("Username Cannot be empty or spaces");
@@ -63,12 +64,15 @@ public class CustomerLoginController {
 
 	public void checkCredentials(String username, String password) {
 		Boolean isValid = model.getCredentials(username, password);
+		System.out.println(model.getCustomerStatus());
+		System.out.println(isValid);
 		if (!isValid) {
 			lblError.setText("Customer does not exist!");
 			return;
 		}
 		try {
-			if (model.getCustomerStatus() && isValid) {
+			//if (model.getCustomerStatus() && isValid) {
+			if (isValid) {
 				viewr.handleRoutingCustomerPage("/views/CustomerPageView.fxml", customer_view_pane, username, password, "Customer Home");
 			}
 

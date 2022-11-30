@@ -12,11 +12,11 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="home_pane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeScreenController">
+<AnchorPane fx:id="home_pane" prefHeight="500.0" prefWidth="600.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeScreenController">
 	<children>
-		<Pane fx:id="home_admin_pane" blendMode="SRC_ATOP" layoutX="76.0" layoutY="80.0" onMouseClicked="#adminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="145.0" prefWidth="169.0" AnchorPane.leftAnchor="76.0">
+		<Pane fx:id="home_admin_pane" blendMode="SRC_ATOP" layoutX="76.0" layoutY="80.0" onMouseClicked="#adminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="145.0" prefWidth="169.0" styleClass="most-contacted-layout" stylesheets="@../application/application.css" AnchorPane.leftAnchor="76.0">
 			<children>
-				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="24.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="24.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="most-contacted-layout">
 					<image>
 						<Image url="@../images/Admin.png" />
 					</image>
@@ -31,7 +31,7 @@
 				</Label>
 			</children>
 		</Pane>
-		<Pane fx:id="home_customer_pane" layoutX="350.0" layoutY="80.0" onMouseClicked="#customerClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="145.0" prefWidth="169.0">
+		<Pane fx:id="home_customer_pane" layoutX="359.0" layoutY="80.0" onMouseClicked="#customerClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="145.0" prefWidth="169.0">
 			<children>
 				<Label layoutX="56.0" layoutY="122.0" text="Customer" textFill="#137c65">
 					<font>
@@ -73,7 +73,7 @@
       				</ImageView>
 			</children>
 		</Pane>
-      <Label layoutX="100.0" layoutY="26.0" text="Management Platform for Hotel - Motel Bookings " textAlignment="CENTER" textFill="#0be8b4" textOverrun="CLIP" underline="true" wrapText="true">
+      <Label layoutX="100.0" layoutY="26.0" styleClass="title" text="Management Platform for Hotel - Motel Bookings " textAlignment="CENTER" textFill="#0be8b4" textOverrun="CLIP" underline="true" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>

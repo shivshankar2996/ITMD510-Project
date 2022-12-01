@@ -38,7 +38,7 @@
 	        -fx-font-color:#137c65;
 	
 	/*-fx-background-color : #137c65;*/
-	 -fx-effect:dropshadow(one-pass-box,rgb(255,255,255),8,0.0,2,0); 
+	/*-fx-effect:dropshadow(one-pass-box,rgb(255,255,255),8,0.0,2,0); */
 }
 #home_admin_pane{
 		     -fx-background-color: #FFFAFA;

@@ -114,7 +114,7 @@ public class AdminManageProfileController implements Initializable {
 					: Integer.parseInt(txtAdminRegisterPincode.getText());
 			int age = txtAdminRegisterAge.getText().equals("") ? 0 : Integer.parseInt(txtAdminRegisterAge.getText());
 
-			sql = "update admin_2711 set password='" + txtAdminRegisterPassword.getText() + "', username='"
+			sql = "UPDATE admins_2711 set password='" + txtAdminRegisterPassword.getText() + "', username='"
 					+ txtAdminRegisterUsername.getText() + "',name='" + txtAdminRegisterName.getText()
 					+ "',pincode=" + pinCode + ",state='" + txtAdminRegisterState.getText() + "',city='"
 					+ txtAdminRegisterCity.getText() + "',email='" + txtAdminRegisterEmail.getText()
@@ -123,7 +123,7 @@ public class AdminManageProfileController implements Initializable {
 			int count = stmt.executeUpdate(sql);
 			if (count > 0) {
 
-					dialog.handleDialogAdminManageProfile("Success", "Admin Updated Successfully!",
+					dialog.handleDialogAdminManageProfile("Success", "Admin Profile Updated Successfully!",
 						stackepanemanageprofile, "/views/AdminPageView.fxml", loginUserName, loginUserPass);
 
 			}

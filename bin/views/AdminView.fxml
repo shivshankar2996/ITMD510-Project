@@ -27,7 +27,10 @@
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Button>
-				<Label fx:id="lblError" layoutX="43.0" layoutY="264.0" textFill="#dd1126" />
+				<Label fx:id="lblError" layoutX="397.0" layoutY="289.0" prefHeight="17.0" prefWidth="0.0" style="-fx-background-color: #FFFFFF;" textFill="RED">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
 				<Button layoutX="288.0" layoutY="27.0" mnemonicParsing="false" onAction="#onAdminBackButton" prefHeight="27.0" prefWidth="54.0" stylesheets="@../application/application.css" text="Back">
 					<font>
 						<Font name="System Bold" size="13.0" />
@@ -43,9 +46,9 @@
                   <Image url="@../images/Password.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutY="-4.0" prefHeight="416.0" prefWidth="268.0" styleClass="loginbg" stylesheets="@../application/application.css">
+            <AnchorPane prefHeight="411.0" prefWidth="260.0" styleClass="loginbg" stylesheets="@../application/application.css">
                <children>
-                  <ImageView fitHeight="210.0" fitWidth="162.0" layoutX="53.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="210.0" fitWidth="162.0" layoutX="40.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/LoginIconAdmin.png" />
                      </image>

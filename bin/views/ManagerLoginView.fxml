@@ -11,15 +11,18 @@
 
 <AnchorPane fx:id="manager_view_pane" prefHeight="410.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerLoginController">
 	<children>
+
+		<Label fx:id="lblError" layoutX="348.0" layoutY="287.0" style="-fx-background-color: #FFFFFF;" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
 		<Button layoutX="437.0" layoutY="214.0" mnemonicParsing="false" onAction="#onManagerLogin" prefHeight="25.0" prefWidth="150.0" text="Login" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
 			</font>
 		</Button>
-		<TextField fx:id="txtManagerUsername" layoutX="437.0" layoutY="90.0" />
-		<PasswordField fx:id="txtManagerPassword" layoutX="437.0" layoutY="157.0" />
-
-		<Label fx:id="lblError" layoutX="43.0" layoutY="264.0" textFill="#dd1126" />
+		<TextField fx:id="txtManagerUsername" layoutX="437.0" layoutY="90.0" promptText="USER NAME" />
+		<PasswordField fx:id="txtManagerPassword" layoutX="437.0" layoutY="157.0" promptText="PASSWORD" />
 		<Button layoutX="294.0" layoutY="20.0" mnemonicParsing="false" onAction="#onManagerBackButton" prefHeight="27.0" prefWidth="54.0" text="Back" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />

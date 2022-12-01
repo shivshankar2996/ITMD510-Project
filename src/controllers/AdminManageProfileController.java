@@ -4,8 +4,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
-import dao.DBConnect;
+//import dao.DBConnect;
+import application.main;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -42,7 +42,7 @@ public class AdminManageProfileController implements Initializable {
 	private Label adminmanagelblError;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	String loginUserName = null;
@@ -51,7 +51,7 @@ public class AdminManageProfileController implements Initializable {
 	DialogModel dialog = null;
 
 	public AdminManageProfileController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 		dialog = new DialogModel();
@@ -107,7 +107,7 @@ public class AdminManageProfileController implements Initializable {
 				return;
 			}
 
-			stmt = conn.getConnection().createStatement();
+			stmt = OracleConnection.createStatement();
 			String sql = null;
 
 			int pinCode = txtAdminRegisterPincode.getText().equals("") ? 0
@@ -127,7 +127,7 @@ public class AdminManageProfileController implements Initializable {
 						stackepanemanageprofile, "/views/AdminPageView.fxml", loginUserName, loginUserPass);
 
 			}
-			conn.getConnection().close();
+			OracleConnection.close();
 
 		} catch (SQLException se) {
 			se.printStackTrace();

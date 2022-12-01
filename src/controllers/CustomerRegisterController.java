@@ -2,8 +2,8 @@ package controllers;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -39,13 +39,13 @@ public class CustomerRegisterController {
 	private Label customerregisterlblError;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	DialogModel dialog = null;
 
 	public CustomerRegisterController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
@@ -91,7 +91,7 @@ public class CustomerRegisterController {
 			}
 
 			// Open connection.
-			stmt = conn.getConnection().createStatement();
+			stmt = OracleConnection.createStatement();
 			// resultset query string to sort the pep field in descending order.
 
 			String sql = "INSERT INTO customers_2711 (username, password, name, age, email, city, state, pincode) VALUES ('"
@@ -104,7 +104,7 @@ public class CustomerRegisterController {
 						"/views/CustomerView.fxml", "Customer Login");
 			}
 			// close opened connection.
-			conn.getConnection().close();
+			OracleConnection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

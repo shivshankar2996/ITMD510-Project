@@ -4,13 +4,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 
-public class AdminManagerModel extends DBConnect {
+public class AdminManagerModel extends Main {
 	private int aid;
 	private String aname;
 	private String aemail;
@@ -18,11 +18,11 @@ public class AdminManagerModel extends DBConnect {
 	private Button actionButton;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 
 	public AdminManagerModel() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class AdminManagerModel extends DBConnect {
 	public ObservableList<AdminManagerModel> getAdmins() {
 		ObservableList<AdminManagerModel> admins = FXCollections.observableArrayList();
 		String query = "SELECT id, name, email, status FROM admins_2711";
-		try (PreparedStatement statement = connection.prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				AdminManagerModel admin = new AdminManagerModel();
@@ -118,7 +118,7 @@ public class AdminManagerModel extends DBConnect {
 
 	public void updateTable(int id) {
 		String query = "update admins_2711 set status = true where id=" + id + ";";
-			try (PreparedStatement stmt = connection.prepareStatement(query)) {
+			try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			int count = stmt.executeUpdate();
 			if (count > 0) {
 				System.out.println("Updated successfully");

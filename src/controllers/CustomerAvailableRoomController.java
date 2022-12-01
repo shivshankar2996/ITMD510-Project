@@ -4,8 +4,8 @@ import java.net.URL;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -54,7 +54,7 @@ public class CustomerAvailableRoomController implements Initializable {
 
 	private ObservableList<RoomModel> roomList;
 
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	RoomModel roomModel = null;
@@ -62,7 +62,7 @@ public class CustomerAvailableRoomController implements Initializable {
 	String loginUserPass = null;
 
 	public CustomerAvailableRoomController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		roomModel = new RoomModel();
 	}

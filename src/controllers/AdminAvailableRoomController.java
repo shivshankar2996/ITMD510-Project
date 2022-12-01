@@ -4,12 +4,11 @@ import java.net.URL;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-
-import dao.DBConnect;
+//import dao.DBConnect;
+import application.main;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -62,7 +61,7 @@ public class AdminAvailableRoomController implements Initializable {
 
 	private ObservableList<RoomModel> roomList;
 
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	RoomModel roomModel = null;
@@ -70,7 +69,7 @@ public class AdminAvailableRoomController implements Initializable {
 	String loginUserPass = null;
 
 	public AdminAvailableRoomController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		roomModel = new RoomModel();
 	}

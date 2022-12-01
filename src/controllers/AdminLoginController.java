@@ -2,7 +2,8 @@ package controllers;
 
 import java.sql.Statement;
 
-import dao.DBConnect;
+//import dao.DBConnect;
+import application.main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -28,12 +29,12 @@ public class AdminLoginController {
 	private Label lblError;
    
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	CRUDModel model = null;
 	public AdminLoginController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 	}

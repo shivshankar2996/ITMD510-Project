@@ -3,10 +3,10 @@ package models;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import application.main;
+//import dao.DBConnect;
 
-import dao.DBConnect;
-
-public class CustomerModel extends DBConnect {
+public class CustomerModel extends Main {
 
 	private Boolean customerStatus;
 	private int id;
@@ -175,7 +175,7 @@ public class CustomerModel extends DBConnect {
 	public Boolean getCredentials(String username, String password) {
 
 		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
@@ -192,7 +192,7 @@ public class CustomerModel extends DBConnect {
 	public Boolean getCustomerDetails(String username, String password) {
 
 		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
@@ -221,7 +221,7 @@ public class CustomerModel extends DBConnect {
 		
 //		CustomerModel custModel = null;
 		String query = "SELECT * FROM customers_2711 WHERE name = ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, custname);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {

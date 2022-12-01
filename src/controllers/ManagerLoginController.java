@@ -3,8 +3,8 @@ package controllers;
 import java.net.URL;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -25,13 +25,13 @@ public class ManagerLoginController implements Initializable {
 	@FXML
 	private Label lblError;
 
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	CRUDModel model = null;
 
 	public ManagerLoginController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 	}

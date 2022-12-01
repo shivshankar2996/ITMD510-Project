@@ -4,12 +4,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class RoomModel {
+public class RoomModel extends Main {
 	String roomId;
 	String roomType;
 	String roomNumber;
@@ -18,11 +18,11 @@ public class RoomModel {
 	String roomStatus;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 
 	public RoomModel() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 
 	}
 
@@ -123,7 +123,7 @@ public class RoomModel {
 
 	public ObservableList<RoomModel> getRooms(String query) {
 		ObservableList<RoomModel> rooms = FXCollections.observableArrayList();
-		try (PreparedStatement statement = conn.getConnection().prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				RoomModel room = new RoomModel();
@@ -145,7 +145,7 @@ public class RoomModel {
 	public int updateRoomByRoomNumber(int roomNumber) {
 		int result = 0;
 		String query = "UPDATE  rooms_2711 SET roomstatus=? WHERE roomnumber=?";
-		try (PreparedStatement statement = conn.getConnection().prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			statement.setString(1, "available");
 			statement.setInt(2, roomNumber);
 			result = statement.executeUpdate();
@@ -157,7 +157,7 @@ public class RoomModel {
 	
 	public void findRoomByRoomNumber(int roomNumber) {
 		String query = "select * from  rooms_2711 WHERE roomstatus='available' and roomnumber=?;";
-		try (PreparedStatement statement = conn.getConnection().prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			statement.setInt(1, roomNumber);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {

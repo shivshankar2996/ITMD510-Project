@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -89,7 +89,7 @@ public class CustomerReservationController {
 	private ViewsRouting viewr;
 	String loginUserName = null;
 	String loginUserPass = null;
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	DialogModel dialog = null;
 
@@ -97,7 +97,7 @@ public class CustomerReservationController {
 		// TODO Auto-generated constructor stub
 		custModel = new CustomerModel();
 		roomModel = new RoomModel();
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
@@ -156,7 +156,7 @@ public class CustomerReservationController {
 		LocalDate endDate = dateEndField.getValue();
 
 		try {
-			stmt = conn.getConnection().createStatement();
+			stmt = OracleConnection.createStatement();
 
 			String sql = "INSERT INTO bookings_2711 (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
@@ -173,7 +173,7 @@ public class CustomerReservationController {
 				dialog.handleDialogCustomerReservation("Success", "Booking done Successfully!",
 						stackpane_customerreservation, "/views/CustomerPageView.fxml", loginUserName, loginUserPass);
 			}
-			conn.getConnection().close();
+			OracleConnection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

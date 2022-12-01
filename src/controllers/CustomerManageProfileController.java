@@ -4,8 +4,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -42,7 +42,7 @@ public class CustomerManageProfileController implements Initializable {
 	private Label customermanagelblError;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	String loginUserName;
@@ -51,7 +51,7 @@ public class CustomerManageProfileController implements Initializable {
 	DialogModel dialog = null;
 
 	public CustomerManageProfileController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 		model = new CustomerModel();
@@ -101,7 +101,7 @@ public class CustomerManageProfileController implements Initializable {
 				return;
 			}
 
-				stmt = conn.getConnection().createStatement();
+				stmt = OracleConnection.createStatement();
 			String sql = null;
 
 			int pinCode = txtCustomerRegisterPincode.getText().equals("") ? 0
@@ -123,7 +123,7 @@ public class CustomerManageProfileController implements Initializable {
 						customerstackepanemanageprofile, "/views/CustomerPageView.fxml", loginUserName, loginUserPass);
 
 			}
-			conn.getConnection().close();
+			OracleConnection.close();
 
 		} catch (SQLException se) {
 			se.printStackTrace();

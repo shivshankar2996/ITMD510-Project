@@ -2,8 +2,8 @@ package controllers;
 
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -38,13 +38,13 @@ public class AdminRegisterController {
 	Label adminregisterlblError;
 
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	DialogModel dialog = null;
 
 	public AdminRegisterController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
@@ -69,7 +69,7 @@ public class AdminRegisterController {
 
 		try {
 			// Open connection.
-			stmt = conn.getConnection().createStatement();
+			stmt = OracleConnection.createStatement();
 			// resultset query string to sort the pep field in descending order.
 			adminregisterlblError.setText("");
 			String username = this.txtAdminRegisterUsername.getText();
@@ -106,7 +106,7 @@ public class AdminRegisterController {
 						"/views/AdminView.fxml","Admin Login");
 
 			// close opened connection.
-			conn.getConnection().close();
+			OracleConnection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

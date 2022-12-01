@@ -4,8 +4,8 @@ import java.net.URL;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
-
-import dao.DBConnect;
+import application.main;
+//import dao.DBConnect;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,14 +39,14 @@ public class ManagerManageCustomerController implements Initializable {
 	private TableColumn<ManagerModel, String> startdate;
 	@FXML
 	private TableColumn<ManagerModel, String> enddate;
-	
-	DBConnect conn = null;
+
+	static Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	ManagerModel mgrModel = null;
 
 	public ManagerManageCustomerController() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 		viewr = new ViewsRouting();
 		mgrModel = new ManagerModel();
 	}

@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import application.main;
+//import dao.DBConnect;
 
-import dao.DBConnect;
-
-public class ManagerModel extends DBConnect {
+public class ManagerModel extends Main {
 	private int cid;
 	private String cname;
 	private String ccity;
@@ -24,11 +24,11 @@ public class ManagerModel extends DBConnect {
 	private String enddate;
 	private String roomNo;
 	// Declare DB objects
-	DBConnect conn = null;
+	static Connection OracleConnection;
 	Statement stmt = null;
 
 	public ManagerModel() {
-		conn = new DBConnect();
+		OracleConnection = Main.OracleConnection;
 	}
 
 	/**
@@ -217,7 +217,7 @@ public class ManagerModel extends DBConnect {
 	public List<ManagerModel> getCustomers() {
 		List<ManagerModel> customers = new ArrayList<>();
 		String query = "SELECT id, name, city, state, email, pincode, age FROM customers_2711";
-		try (PreparedStatement statement = connection.prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				ManagerModel customer = new ManagerModel();
@@ -240,7 +240,7 @@ public class ManagerModel extends DBConnect {
 	public List<ManagerModel> getBooking() {
 		List<ManagerModel> bookings = new ArrayList<>();
 		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM bookings_2711;";
-		try (PreparedStatement statement = connection.prepareStatement(query)) {
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				ManagerModel booking = new ManagerModel();

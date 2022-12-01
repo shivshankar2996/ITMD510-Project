@@ -3,10 +3,10 @@ package models;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import application.main;
+//import dao.DBConnect;
 
-import dao.DBConnect;
-
-public class CRUDModel extends DBConnect {
+public class CRUDModel extends Main {
 
 	private Boolean admin;
 	private int id;
@@ -165,7 +165,7 @@ public class CRUDModel extends DBConnect {
 	public Boolean getCredentials(String username, String password) {
 
 		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
@@ -184,7 +184,7 @@ public class CRUDModel extends DBConnect {
 	public Boolean getManagerCredentials(String username, String password) {
 
 		String query = "SELECT * FROM managers_2711 WHERE username = ? and password = ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
@@ -203,7 +203,7 @@ public class CRUDModel extends DBConnect {
 	public Boolean getAdminDetails(String username, String password) {
 
 		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
-		try (PreparedStatement stmt = connection.prepareStatement(query)) {
+		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();

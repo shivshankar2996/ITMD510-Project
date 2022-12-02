@@ -4,7 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
@@ -165,8 +169,13 @@ public class CustomerReservationController {
 
 		int customerTotal = this.txtTotal.getText() == "" ? 0 : Integer.parseInt(this.txtTotal.getText());
 		int customerServicefee = this.txtServiceFees.getText() == "" ? 0 : Integer.parseInt(this.txtServiceFees.getText());
-		LocalDate localDate = dateStartField.getValue();
-		LocalDate endDate = dateEndField.getValue();
+		LocalDate startLocalDate = dateStartField.getValue();
+		LocalDate endLocalDate = dateEndField.getValue();
+		Date startDate = Date.from(startLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date endDate = Date.from(endLocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy");
+		String strStartDate = formatter.format(startDate);
+		String strEndDate = formatter.format(endDate);
 
 		try {
 			stmt = OracleConnection.createStatement();
@@ -174,8 +183,8 @@ public class CustomerReservationController {
 			String sql = "INSERT INTO bookings_2711 (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
 					+ customerPincode + ",'" + customerRoomtype + "'," + customerNoumberofPeople + ","
-					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + "," + "to_date('" + localDate + "','dd-month-yy')" + ","
-					+  "to_date('" + endDate + "','dd-month-yy')"  + "," + customerRoomNumber + ")";
+					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + ",'" + strStartDate + "','"
+					+ strEndDate + "'," + customerRoomNumber + ")";
 
 			String updateSql = "update rooms_2711 set roomstatus = 'busy' where roomnumber ="
 					+ customerRoomNumber + "";

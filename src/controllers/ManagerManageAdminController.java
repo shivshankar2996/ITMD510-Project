@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
 
-import app.Project;
+//import app.Project;
 //import dao.DBConnect;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -44,6 +44,8 @@ public class ManagerManageAdminController implements Initializable {
 	private TableColumn<AdminManagerModel, String> astatus;
 	@FXML
 	private TableColumn<AdminManagerModel, String> actionButton;
+	private TableColumn<AdminManagerModel, String> actionButton1;
+
 
 	private ObservableList<AdminManagerModel> mgrAdmins;
 
@@ -129,8 +131,9 @@ public class ManagerManageAdminController implements Initializable {
 				return cell;
 			}
 		};
-
+System.out.println(cellFactory);
 		actionButton.setCellFactory(cellFactory);
+		//actionButton1.setCellFactory(cellFactory);
 
 		// auto adjust width of columns depending on their content
 		tblAdmins.setItems(mgrAdmins);

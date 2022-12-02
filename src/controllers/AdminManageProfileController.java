@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-import app.Project;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;

@@ -1,10 +1,12 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
@@ -49,7 +51,7 @@ public class ManagerManageAdminController implements Initializable {
 	AdminManagerModel mgrModel = null;
 
 	public ManagerManageAdminController() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		mgrModel = new AdminManagerModel();
 	}

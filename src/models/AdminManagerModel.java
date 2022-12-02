@@ -1,16 +1,19 @@
 package models;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import application.main;
+
+import app.Project;
+//import application.main;
 //import dao.DBConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
 
-public class AdminManagerModel extends Main {
+public class AdminManagerModel extends Project {
 	private int aid;
 	private String aname;
 	private String aemail;
@@ -22,7 +25,7 @@ public class AdminManagerModel extends Main {
 	Statement stmt = null;
 
 	public AdminManagerModel() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 	}
 
 	/**

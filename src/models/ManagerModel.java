@@ -1,15 +1,16 @@
 package models;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import application.main;
-//import dao.DBConnect;
 
-public class ManagerModel extends Main {
+import app.Project;
+
+public class ManagerModel extends Project {
 	private int cid;
 	private String cname;
 	private String ccity;
@@ -28,7 +29,7 @@ public class ManagerModel extends Main {
 	Statement stmt = null;
 
 	public ManagerModel() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 	}
 
 	/**

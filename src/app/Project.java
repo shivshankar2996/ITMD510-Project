@@ -1,4 +1,11 @@
-package application;
+package app;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+//import com.mysql.cj.xdevapi.Statement;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Project extends Application {
 
 	public static Stage stage; // set global stage object!!!
 	public static Connection OracleConnection;
@@ -16,7 +23,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			stage = primaryStage;
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("/views/HomescreenView.fxml"));
+			FXMLLoader loader = new FXMLLoader(Project.class.getResource("/views/HomescreenView.fxml"));
 			AnchorPane root = (AnchorPane) loader.load();
 			Scene scene = new Scene(root,600,500);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -34,8 +41,8 @@ public class Main extends Application {
 
 	public static void main(String[] args)throws Exception {
 		launch(args);
-		Class.forName("oracle.jdbd.driver.OracleDriver");
-		OracleConnection =  DriverManager.getConnection("jdbc:oracle:thin:@LAPTOP-R63JOEHG:1522:xe","system","Oracle123");
+		//Class.forName("oracle.jdbd.driver.OracleDriver");
+		OracleConnection =  DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
 		Statement st = OracleConnection.createStatement();
 		String query = "select * from admins_2711";
 		ResultSet rs = st.executeQuery(query);

@@ -1,9 +1,11 @@
 package controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 
-//import dao.DBConnect;
-import application.main;
+import app.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -33,14 +35,17 @@ public class AdminLoginController {
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	CRUDModel model = null;
-	public AdminLoginController() {
-		OracleConnection = Main.OracleConnection;
+	public AdminLoginController() throws SQLException {
+		OracleConnection = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 	}
 
 	
-	public void onAdminLogin() {
+	
+
+
+	public void onAdminLogin() throws SQLException {
 		String username = this.txtAdminUsername.getText();
 		String password = this.txtAdminPassword.getText();
 System.out.println(password);
@@ -76,7 +81,7 @@ System.out.println(username);
         
 	}
 
-	private void checkCredentials(String username, String password) {
+	private void checkCredentials(String username, String password) throws SQLException {
 		// TODO Auto-generated method stub
 		Boolean isValid = model.getCredentials(username, password);
 		System.out.println(username);

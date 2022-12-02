@@ -1,12 +1,14 @@
 package models;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import application.main;
-//import dao.DBConnect;
 
-public class CRUDModel extends Main {
+import app.Project;
+
+public class CRUDModel extends Project {
 
 	private Boolean admin;
 	private int id;
@@ -162,9 +164,9 @@ public class CRUDModel extends Main {
 		return admin;
 	}
 
-	public Boolean getCredentials(String username, String password) {
-
-		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
+	public Boolean getCredentials(String username, String password) throws SQLException {
+Connection OracleConnection  = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -172,7 +174,7 @@ public class CRUDModel extends Main {
 			if (rs.next()) {
 
 				setId(rs.getInt("id"));
-				setAdmin(rs.getBoolean("status"));
+				setAdmin(rs.getString("status").equals("true"));
 				return true;
 			}
 		} catch (SQLException e) {
@@ -183,7 +185,7 @@ public class CRUDModel extends Main {
 
 	public Boolean getManagerCredentials(String username, String password) {
 
-		String query = "SELECT * FROM managers_2711 WHERE username = ? and password = ?;";
+		String query = "SELECT * FROM managers_2711 WHERE username = ? and password = ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -202,7 +204,7 @@ public class CRUDModel extends Main {
 
 	public Boolean getAdminDetails(String username, String password) {
 
-		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?;";
+		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);

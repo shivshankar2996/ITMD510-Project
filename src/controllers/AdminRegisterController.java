@@ -1,8 +1,10 @@
 package controllers;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -44,7 +46,7 @@ public class AdminRegisterController {
 	DialogModel dialog = null;
 
 	public AdminRegisterController() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}

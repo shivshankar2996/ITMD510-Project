@@ -1,15 +1,17 @@
 package models;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class RoomModel extends Main {
+public class RoomModel extends Project {
 	String roomId;
 	String roomType;
 	String roomNumber;
@@ -22,7 +24,7 @@ public class RoomModel extends Main {
 	Statement stmt = null;
 
 	public RoomModel() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 
 	}
 

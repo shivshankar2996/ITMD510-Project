@@ -1,10 +1,12 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,7 +53,7 @@ public class CustomerManageProfileController implements Initializable {
 	DialogModel dialog = null;
 
 	public CustomerManageProfileController() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 		model = new CustomerModel();

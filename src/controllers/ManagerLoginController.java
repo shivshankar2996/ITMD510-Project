@@ -1,9 +1,11 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,7 +33,7 @@ public class ManagerLoginController implements Initializable {
 	CRUDModel model = null;
 
 	public ManagerLoginController() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 	}

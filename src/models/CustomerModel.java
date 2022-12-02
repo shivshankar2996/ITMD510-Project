@@ -3,10 +3,10 @@ package models;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import application.main;
-//import dao.DBConnect;
 
-public class CustomerModel extends Main {
+import app.Project;
+
+public class CustomerModel extends Project {
 
 	private Boolean customerStatus;
 	private int id;

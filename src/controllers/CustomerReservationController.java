@@ -1,5 +1,6 @@
 package controllers;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -7,7 +8,8 @@ import java.time.LocalDate;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-import application.main;
+
+import app.Project;
 //import dao.DBConnect;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -97,7 +99,7 @@ public class CustomerReservationController {
 		// TODO Auto-generated constructor stub
 		custModel = new CustomerModel();
 		roomModel = new RoomModel();
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}

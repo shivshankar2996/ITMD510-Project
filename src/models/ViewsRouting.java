@@ -2,7 +2,7 @@ package models;
 
 import java.io.IOException;
 
-import application.Main;
+import app.Project;
 import controllers.AdminAvailableRoomController;
 import controllers.AdminManageProfileController;
 import controllers.AdminPageController;
@@ -25,7 +25,7 @@ public class ViewsRouting {
 		Stage admin = new Stage();
 		Parent root = null;
 		try {
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource(viewName));
+			FXMLLoader loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 
 		} catch (IOException ex) {
@@ -34,7 +34,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setTitle(title);
 		admin.setScene(scene);
@@ -46,11 +46,11 @@ public class ViewsRouting {
 
 	public void handleRoutingAdminPage(String viewName, Pane paneName, String username, String password, String title) {
 		Stage admin = new Stage();
-		Main.stage = admin;
+		Project.stage = admin;
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 			System.out.println(ex);
@@ -60,9 +60,9 @@ public class ViewsRouting {
 		adminPageCtrl.initData(username, password);
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
-		Main.stage.setTitle(title);
+		Project.stage.setTitle(title);
 		admin.setScene(scene);
 
 		current.hide();
@@ -75,7 +75,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 			System.out.println("Exception while loading Customer Page View in Customer Login:" + ex);
@@ -85,7 +85,7 @@ public class ViewsRouting {
 		custPageCtrl.initData(username, password);
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setTitle(title);
 		admin.setScene(scene);
@@ -101,7 +101,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 			}
@@ -111,7 +111,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setScene(scene);
 		admin.setTitle(title);
@@ -126,7 +126,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 			System.out.println(ex);
@@ -137,7 +137,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setScene(scene);
 		admin.setTitle(title);
@@ -152,7 +152,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 
@@ -164,7 +164,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setTitle(title);
 		admin.setScene(scene);
@@ -180,7 +180,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 	}
@@ -191,7 +191,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setTitle(title);
 		admin.setScene(scene);
@@ -207,7 +207,7 @@ public class ViewsRouting {
 		Parent root = null;
 		FXMLLoader loader = null;
 		try {
-			loader = new FXMLLoader(Main.class.getResource(viewName));
+			loader = new FXMLLoader(Project.class.getResource(viewName));
 			root = loader.load();
 		} catch (IOException ex) {
 
@@ -219,7 +219,7 @@ public class ViewsRouting {
 
 		Stage current = (Stage) paneName.getScene().getWindow();
 		Scene scene = new Scene(root);
-		scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());
+		scene.getStylesheets().add(getClass().getResource("/app/application.css").toExternalForm());
 
 		admin.setTitle(title);
 		admin.setScene(scene);

@@ -1,14 +1,15 @@
 package controllers;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
-//import dao.DBConnect;
-import application.main;
+
+import app.Project;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -69,7 +70,7 @@ public class AdminAvailableRoomController implements Initializable {
 	String loginUserPass = null;
 
 	public AdminAvailableRoomController() {
-		OracleConnection = Main.OracleConnection;
+		OracleConnection = Project.OracleConnection;
 		viewr = new ViewsRouting();
 		roomModel = new RoomModel();
 	}

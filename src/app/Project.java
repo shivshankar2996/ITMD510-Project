@@ -3,6 +3,7 @@ package app;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 //import com.mysql.cj.xdevapi.Statement;
@@ -18,7 +19,16 @@ public class Project extends Application {
 
 	public static Stage stage; // set global stage object!!!
 	public static Connection OracleConnection;
-
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 	@Override
 	public void start(Stage primaryStage) {
 		try {

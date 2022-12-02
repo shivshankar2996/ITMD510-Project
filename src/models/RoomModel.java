@@ -20,11 +20,11 @@ public class RoomModel extends Project {
 	String roomStatus;
 
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 
 	public RoomModel() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 
 	}
 
@@ -158,7 +158,7 @@ public class RoomModel extends Project {
 	}
 	
 	public void findRoomByRoomNumber(int roomNumber) {
-		String query = "select * from  rooms_2711 WHERE roomstatus='available' and roomnumber=?;";
+		String query = "select * from  rooms_2711 WHERE roomstatus='available' and roomnumber=?";
 		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			statement.setInt(1, roomNumber);
 			ResultSet resultSet = statement.executeQuery();

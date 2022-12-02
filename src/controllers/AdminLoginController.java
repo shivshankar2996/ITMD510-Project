@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import app.Project;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -31,15 +30,25 @@ public class AdminLoginController {
 	private Label lblError;
    
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	CRUDModel model = null;
 	public AdminLoginController() throws SQLException {
-		OracleConnection = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		model = new CRUDModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	
 	

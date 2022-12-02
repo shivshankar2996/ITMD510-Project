@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import app.Project;
 
 public class CRUDModel extends Project {
-
+	private Connection OracleConnection;
 	private Boolean admin;
 	private int id;
 
@@ -164,8 +164,13 @@ public class CRUDModel extends Project {
 		return admin;
 	}
 
+	public CRUDModel() {
+		OracleConnection = SetConnection();
+	}
+	
+	
+	
 	public Boolean getCredentials(String username, String password) throws SQLException {
-Connection OracleConnection  = DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
 		String query = "SELECT * FROM admins_2711 WHERE username = ? and password = ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
@@ -193,7 +198,7 @@ Connection OracleConnection  = DriverManager.getConnection("jdbc:oracle:thin:@DE
 			if (rs.next()) {
 
 				setId(rs.getInt("id"));
-				setAdmin(rs.getBoolean("status"));
+				setAdmin(rs.getString("status") == "true" );
 				return true;
 			}
 		} catch (SQLException e) {
@@ -212,7 +217,7 @@ Connection OracleConnection  = DriverManager.getConnection("jdbc:oracle:thin:@DE
 			if (rs.next()) {
 
 				setId(rs.getInt("id"));
-				setAdmin(rs.getBoolean("status"));
+				setAdmin(rs.getString("status").equals("true"));
 				setAdminAge(rs.getInt("age"));
 				setAdminName(rs.getString("name"));
 				setAdminEmail(rs.getString("email"));

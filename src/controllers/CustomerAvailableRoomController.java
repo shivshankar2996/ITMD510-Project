@@ -2,6 +2,8 @@ package controllers;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
@@ -56,7 +58,7 @@ public class CustomerAvailableRoomController implements Initializable {
 
 	private ObservableList<RoomModel> roomList;
 
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	RoomModel roomModel = null;
@@ -64,10 +66,20 @@ public class CustomerAvailableRoomController implements Initializable {
 	String loginUserPass = null;
 
 	public CustomerAvailableRoomController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		roomModel = new RoomModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 	
 	public void initData(String username, String password) {
 		this.loginUserName = username;

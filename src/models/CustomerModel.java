@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,9 +28,14 @@ public class CustomerModel extends Project {
 
 	private int customerPincode;
 	
+	private Connection OracleConnection;
 	
+	public CustomerModel() {
+		OracleConnection = SetConnection();
+	}
 	
 
+	
 
 
 	/**
@@ -174,13 +180,13 @@ public class CustomerModel extends Project {
 
 	public Boolean getCredentials(String username, String password) {
 
-		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
+		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				setCustomerStatus(rs.getBoolean("status"));
+				setCustomerStatus(rs.getString("status") == "true");
 				return true;
 			}
 		} catch (SQLException e) {
@@ -191,7 +197,7 @@ public class CustomerModel extends Project {
 
 	public Boolean getCustomerDetails(String username, String password) {
 
-		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?;";
+		String query = "SELECT * FROM customers_2711 WHERE username = ? and password= ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, username);
 			stmt.setString(2, password);
@@ -199,7 +205,7 @@ public class CustomerModel extends Project {
 			if (rs.next()) {
 
 				setId(rs.getInt("id"));
-				setCustomerStatus(rs.getBoolean("status"));
+				setCustomerStatus(rs.getString("status") == "true");
 				setCustomerAge(rs.getInt("age"));
 				setCustomerName(rs.getString("name"));
 				setCustomerEmail(rs.getString("email"));
@@ -220,13 +226,13 @@ public class CustomerModel extends Project {
 	public void getCustomerDetailsUsingName(String custname) {
 		
 //		CustomerModel custModel = null;
-		String query = "SELECT * FROM customers_2711 WHERE name = ?;";
+		String query = "SELECT * FROM customers_2711 WHERE name = ?";
 		try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			stmt.setString(1, custname);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				setId(rs.getInt("id"));
-				setCustomerStatus(rs.getBoolean("status"));
+				setCustomerStatus(rs.getString("status").equals("true"));
 				setCustomerAge(rs.getInt("age"));
 				setCustomerName(rs.getString("name"));
 				setCustomerEmail(rs.getString("email"));

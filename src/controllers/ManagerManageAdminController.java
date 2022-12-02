@@ -2,6 +2,8 @@ package controllers;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
@@ -45,16 +47,26 @@ public class ManagerManageAdminController implements Initializable {
 
 	private ObservableList<AdminManagerModel> mgrAdmins;
 
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	AdminManagerModel mgrModel = null;
 
 	public ManagerManageAdminController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		mgrModel = new AdminManagerModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	@FXML
 	public void onManageAdminBack() {

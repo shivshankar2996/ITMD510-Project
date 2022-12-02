@@ -25,13 +25,15 @@ public class ManagerModel extends Project {
 	private String enddate;
 	private String roomNo;
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 
 	public ManagerModel() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 	}
 
+	
+	
 	/**
 	 * @return the cid
 	 */

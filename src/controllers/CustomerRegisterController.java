@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -41,16 +42,26 @@ public class CustomerRegisterController {
 	private Label customerregisterlblError;
 
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	DialogModel dialog = null;
 
 	public CustomerRegisterController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	@FXML
 	public void onCustomerRegisterSubmit() {
@@ -96,10 +107,10 @@ public class CustomerRegisterController {
 			stmt = OracleConnection.createStatement();
 			// resultset query string to sort the pep field in descending order.
 
-			String sql = "INSERT INTO customers_2711 (username, password, name, age, email, city, state, pincode) VALUES ('"
+			String sql = "INSERT INTO customers_2711 (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ customerRegisterUsername + "','" + customerRegisterPassword + "','" + customerRegisterName + "',"
 					+ customerRegisterAge + ",'" + customerRegisterEmail + "','" + customerRegisterCity + "','"
-					+ customerRegisterState + "'," + customerRegisterPincode + ");";
+					+ customerRegisterState + "'," + customerRegisterPincode + ",'true')";
 			int c = stmt.executeUpdate(sql);
 			if (c > 0) {
 				dialog.handleDialog("Success", "Customer registered Successfully!", customer_register_stackpane,

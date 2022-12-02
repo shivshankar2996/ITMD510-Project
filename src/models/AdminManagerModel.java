@@ -19,13 +19,14 @@ public class AdminManagerModel extends Project {
 	private String aemail;
 	private String astatus;
 	private Button actionButton;
+	
+	private Connection OracleConnection;
 
 	// Declare DB objects
-	static Connection OracleConnection;
 	Statement stmt = null;
 
 	public AdminManagerModel() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 	}
 
 	/**
@@ -120,7 +121,7 @@ public class AdminManagerModel extends Project {
 	}
 
 	public void updateTable(int id) {
-		String query = "update admins_2711 set status = true where id=" + id + ";";
+		String query = "update admins_2711 set status = 'true' where id=" + id + "";
 			try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			int count = stmt.executeUpdate();
 			if (count > 0) {

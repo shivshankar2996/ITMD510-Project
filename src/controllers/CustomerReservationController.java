@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -91,7 +92,7 @@ public class CustomerReservationController {
 	private ViewsRouting viewr;
 	String loginUserName = null;
 	String loginUserPass = null;
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	DialogModel dialog = null;
 
@@ -99,10 +100,20 @@ public class CustomerReservationController {
 		// TODO Auto-generated constructor stub
 		custModel = new CustomerModel();
 		roomModel = new RoomModel();
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	public void initData(String username, String password) {
 		this.loginUserName = username;
@@ -163,11 +174,11 @@ public class CustomerReservationController {
 			String sql = "INSERT INTO bookings_2711 (custname, custage, custcity, custstate, custpincode, roomtype, numberofpeople, roomprice, servicefee,total, startdate, enddate, roomnumber) VALUES ('"
 					+ customerName + "'," + customerAge + ",'" + customerCity + "','" + customerState + "',"
 					+ customerPincode + ",'" + customerRoomtype + "'," + customerNoumberofPeople + ","
-					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + ",'" + localDate + "','"
-					+ endDate + "'," + customerRoomNumber + ");";
+					+ customerRoomPrice + "," + customerServicefee + "," + customerTotal + "," + "to_date('" + localDate + "','dd-month-yy')" + ","
+					+  "to_date('" + endDate + "','dd-month-yy')"  + "," + customerRoomNumber + ")";
 
 			String updateSql = "update rooms_2711 set roomstatus = 'busy' where roomnumber ="
-					+ customerRoomNumber + ";";
+					+ customerRoomNumber + "";
 			int c = stmt.executeUpdate(sql);
 			int c2 = stmt.executeUpdate(updateSql);
 

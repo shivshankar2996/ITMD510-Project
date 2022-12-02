@@ -2,6 +2,8 @@ package controllers;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
@@ -62,7 +64,7 @@ public class AdminAvailableRoomController implements Initializable {
 
 	private ObservableList<RoomModel> roomList;
 
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	RoomModel roomModel = null;
@@ -70,11 +72,21 @@ public class AdminAvailableRoomController implements Initializable {
 	String loginUserPass = null;
 
 	public AdminAvailableRoomController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		roomModel = new RoomModel();
 	}
 
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
+	
 	public void initData(String username, String password) {
 		this.loginUserName = username;
 		this.loginUserPass = password;
@@ -160,7 +172,7 @@ public class AdminAvailableRoomController implements Initializable {
 		if (searchText == "" || searchText == null) {
 			handleDialog();
 		} else {
-			String query = "SELECT * FROM  rooms_2711 where roomnumber =" + Integer.parseInt(searchText) + ";";
+			String query = "SELECT * FROM  rooms_2711 where roomnumber =" + Integer.parseInt(searchText) + "";
 			roomList = roomModel.getRooms(query);
 			loadData(query);
 		}

@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -40,16 +41,26 @@ public class AdminRegisterController {
 	Label adminregisterlblError;
 
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	DialogModel dialog = null;
 
 	public AdminRegisterController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	public void viewAccounts() {
 
@@ -67,7 +78,7 @@ public class AdminRegisterController {
 		String adminRegisterCity = this.txtAdminRegisterCity.getText();
 		String adminRegisterState = this.txtAdminRegisterState.getText();
 		int adminRegisterPincode = this.txtAdminRegisterPincode.getText() == "" ? 0
-				: Integer.parseInt(this.txtAdminRegisterAge.getText());
+				: Integer.parseInt(this.txtAdminRegisterPincode.getText());
 
 		try {
 			// Open connection.
@@ -101,7 +112,7 @@ public class AdminRegisterController {
 			String sql = "INSERT INTO admins_2711 (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ adminRegisterUsername + "','" + adminRegisterPassword + "','" + adminRegisterName + "',"
 					+ adminRegisterAge + ",'" + adminRegisterEmail + "','" + adminRegisterCity + "','"
-					+ adminRegisterState + "'," + adminRegisterPincode + ", false );";
+					+ adminRegisterState + "'," + adminRegisterPincode + ",'true' )";
 				int c = stmt.executeUpdate(sql);
 			if (c > 0)
 				dialog.handleDialog("Success", "Admin registered Successfully!", adminregistrationstackpane,

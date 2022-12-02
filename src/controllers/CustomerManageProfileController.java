@@ -2,6 +2,7 @@ package controllers;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -44,7 +45,7 @@ public class CustomerManageProfileController implements Initializable {
 	private Label customermanagelblError;
 
 	// Declare DB objects
-	static Connection OracleConnection;
+	private Connection OracleConnection;
 	Statement stmt = null;
 	ViewsRouting viewr = null;
 	String loginUserName;
@@ -53,11 +54,21 @@ public class CustomerManageProfileController implements Initializable {
 	DialogModel dialog = null;
 
 	public CustomerManageProfileController() {
-		OracleConnection = Project.OracleConnection;
+		OracleConnection = SetConnection();
 		viewr = new ViewsRouting();
 		dialog = new DialogModel();
 		model = new CustomerModel();
 	}
+	
+	public Connection SetConnection(){
+		 try {
+			return DriverManager.getConnection("jdbc:oracle:thin:@DESKTOP-QRVS9B0:1521:xe","system","SHankar$1996");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		}
 
 	public void initData(String username, String password) {
 		this.loginUserName = username;
@@ -116,7 +127,7 @@ public class CustomerManageProfileController implements Initializable {
 					+ txtCustomerRegisterName.getText() + "',pincode=" + pinCode + ",state='"
 					+ txtCustomerRegisterState.getText() + "',city='" + txtCustomerRegisterCity.getText()
 					+ "',email='" + txtCustomerRegisterEmail.getText() + "',age=" + age
-					+ " where username='" + this.loginUserName + "' ;";
+					+ " where username='" + this.loginUserName + "'";
 
 			int count = stmt.executeUpdate(sql);
 			if (count > 0) {

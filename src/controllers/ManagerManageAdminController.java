@@ -44,7 +44,7 @@ public class ManagerManageAdminController implements Initializable {
 	private TableColumn<AdminManagerModel, String> astatus;
 	@FXML
 	private TableColumn<AdminManagerModel, String> actionButton;
-	private TableColumn<AdminManagerModel, String> actionButton1;
+	//private TableColumn<AdminManagerModel, String> actionButton1;
 
 
 	private ObservableList<AdminManagerModel> mgrAdmins;
@@ -117,7 +117,7 @@ public class ManagerManageAdminController implements Initializable {
 							setGraphic(null);
 							setText(null);
 						} else {
-							final Button updateButton = new Button("Make Admin");
+							final Button updateButton = new Button("Delete Admin");
 							updateButton.setOnAction(event -> {
 								AdminManagerModel ad = getTableView().getItems().get(getIndex());
 								mgrModel.updateTable(ad.getAid());
@@ -127,6 +127,24 @@ public class ManagerManageAdminController implements Initializable {
 							setText(null);
 						}
 					}
+					/*  
+					public void updateItem1(String item, boolean empty) {
+
+						super.updateItem(item, empty);
+						if (empty) {
+							setGraphic(null);
+							setText(null);
+						} else {
+							final Button updateButton = new Button("Delete Admin");
+							updateButton.setOnAction(event -> {
+								AdminManagerModel ad = getTableView().getItems().get(getIndex());
+								mgrModel.updateTable(ad.getAid());
+					
+							});
+							setGraphic(updateButton);
+							setText(null);
+						}
+					}  */
 				};
 				return cell;
 			}

@@ -58,6 +58,9 @@ public class AdminAvailableRoomController implements Initializable {
 
 	@FXML
 	private Button btnMakeAvail;
+	
+	@FXML
+	private Button btnMakeAvail1;
 
 	@FXML
 	private Label lblSearch;
@@ -141,10 +144,10 @@ public class AdminAvailableRoomController implements Initializable {
 			if (result > 0) {
 				Alert alert = new Alert(Alert.AlertType.INFORMATION);
 				alert.setTitle("Room Info Update");
-				alert.setHeaderText("Modication");
+				alert.setHeaderText("Modification");
 				alert.setContentText("Record updated successfully!");
 				alert.showAndWait();
-				String query = "SELECT * FROM  rooms_2711 where 1";
+				String query = "SELECT * FROM  rooms_2711";
 				roomList = roomModel.getRooms(query);
 				loadData(query);
 			} else {
@@ -156,7 +159,45 @@ public class AdminAvailableRoomController implements Initializable {
 			}
 		}
 	}
+	@FXML
+	void DeleteRoom(ActionEvent event) {
+		String searchText = txtSearch.getText().toString();
+		if (searchText == "" || searchText == null) {
+			handleDialog();
+		} else {
+			int roomNo = Integer.parseInt(searchText);
+			int result = roomModel.deleteRoomByRoomNumber(roomNo);
+			if (result > 0) {
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Room Info Delete");
+				alert.setHeaderText("Modification");
+				alert.setContentText("Record Deleted successfully!");
+				alert.showAndWait();
+				String query = "SELECT * FROM  rooms_2711";
+				roomList = roomModel.getRooms(query);
+				loadData(query);
+			} else {
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Room Info Dalete");
+				alert.setHeaderText("Error");
+				alert.setContentText("Database Error!");
+				alert.showAndWait();
+			}
+		}
+	}
+	@FXML
+	void DeleteRoom1(ActionEvent event) {
+		String searchText = txtSearch.getText().toString();
 
+		if (searchText == "" || searchText == null) {
+			handleDialog();
+		} else {
+			String query = "delete FROM rooms_2711 where roomnumber =" + Integer.parseInt(searchText) + "";
+			roomList = roomModel.getRooms(query);
+			loadData(query);
+		}
+	}
+	
 	@FXML
 	public void onAvailableRooms() {
 		txtSearch.clear();

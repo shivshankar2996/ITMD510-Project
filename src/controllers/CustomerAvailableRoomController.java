@@ -52,6 +52,8 @@ public class CustomerAvailableRoomController implements Initializable {
 
 	@FXML
 	private Button btnMakeAvail;
+	
+	private Button btnMakeAvail1;
 
 	@FXML
 	private Label lblSearch;

@@ -8,6 +8,7 @@ import java.sql.Statement;
 import app.Project;
 //import dao.DBConnect;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -120,8 +121,9 @@ public class AdminRegisterController {
 
 			// close opened connection.
 			OracleConnection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			dialog.handleDialog("Failed", "UserName or EmailID already exists", adminregistrationstackpane,
+					"/views/AdminView.fxml","Admin Login");
 		}
 
 	}

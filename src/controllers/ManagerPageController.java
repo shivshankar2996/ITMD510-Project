@@ -59,6 +59,7 @@ public class ManagerPageController {
 
 	@FXML
 	private void manageAdminClicked(MouseEvent event) {
+		System.out.println("here1");
 		viewr.handleRouting("/views/ManagerManageAdminView.fxml", manager_anchor_pane,"Admin Management");
 	}
 

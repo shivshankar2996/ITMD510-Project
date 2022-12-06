@@ -8,6 +8,7 @@ import java.sql.Statement;
 import app.Project;
 //import dao.DBConnect;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -112,16 +113,20 @@ public class AdminRegisterController {
 			String sql = "INSERT INTO admins_2711 (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ adminRegisterUsername + "','" + adminRegisterPassword + "','" + adminRegisterName + "',"
 					+ adminRegisterAge + ",'" + adminRegisterEmail + "','" + adminRegisterCity + "','"
-					+ adminRegisterState + "'," + adminRegisterPincode + ",'true' )";
-				int c = stmt.executeUpdate(sql);
+					+ adminRegisterState + "'," + adminRegisterPincode + ",'false' )";
+			System.out.println(sql);
+	
+			int c = stmt.executeUpdate(sql);
 			if (c > 0)
 				dialog.handleDialog("Success", "Admin registered Successfully!", adminregistrationstackpane,
 						"/views/AdminView.fxml","Admin Login");
 
 			// close opened connection.
 			OracleConnection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.out.println("admin reg fail");
+			dialog.handleDialog("Failed", "UserName or EmailID already exists", adminregistrationstackpane,
+					"/views/AdminView.fxml","Admin Login");
 		}
 
 	}

@@ -101,13 +101,13 @@ public class AdminManagerModel extends Project {
 
 	public ObservableList<AdminManagerModel> getAdmins() {
 		ObservableList<AdminManagerModel> admins = FXCollections.observableArrayList();
-		String query = "SELECT id, name, email, status FROM admins_2711";
+		String query = "SELECT admin_id, name, email, status FROM admins_2711";
 		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				AdminManagerModel admin = new AdminManagerModel();
 				// grab record data by table field name into ClientModel account object
-				admin.setAid(resultSet.getInt("id"));
+				admin.setAid(resultSet.getInt("admin_id"));
 				admin.setAname(resultSet.getString("name"));
 				admin.setAemail(resultSet.getString("email"));
 				admin.setAstatus(resultSet.getString("status"));
@@ -119,9 +119,31 @@ public class AdminManagerModel extends Project {
 		}
 		return admins; // return arraylist
 	}
-
+	/*
 	public void updateTable(int id) {
-		String query = "update admins_2711 set status = 'true' where id=" + id + "";
+		//String sta;
+		//String query;
+		//String sta = "Select Status From admins_2711 Where id=" + id + "";
+		//System.out.println(sta);
+		//System.out.println(id);
+		//try (PreparedStatement stmt = OracleConnection.prepareStatement(sta)) {
+			int count = stmt.executeUpdate();
+			if (count > 0) {
+				//System.out.println("Updated successfully");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(stmt);
+		
+		String query;
+		if(sta == "true") {
+			 query = "update admins_2711 set status = 'false' where id=" + id + "";
+		}
+		else {
+		 //query = "update admins_2711 set status = 'true' where id=" + id + "";
+		 query = "delete from admins_2711 where id=" + id + "";
+
 			try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 			int count = stmt.executeUpdate();
 			if (count > 0) {
@@ -130,6 +152,18 @@ public class AdminManagerModel extends Project {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		}*/
+		public void updateTable(int id) {
+			String query = "update admins_2711 set status = 'true' where admin_id=" + id + "";
+				try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
+				int count = stmt.executeUpdate();
+				if (count > 0) {
+					System.out.println("Updated successfully");
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 
+		}
 	}
-}
+	

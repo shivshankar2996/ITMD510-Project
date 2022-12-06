@@ -118,9 +118,10 @@ public class CustomerRegisterController {
 			}
 			// close opened connection.
 			OracleConnection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		} catch (Exception e) {
+			//System.out.println("error");
+			dialog.handleDialog("Failed", "UserName or EmailID already exists", customer_register_stackpane,
+					"/views/AdminView.fxml","Admin Login");		}
 
 	}
 

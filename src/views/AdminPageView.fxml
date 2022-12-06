@@ -30,7 +30,7 @@
 					<children>
 						<ImageView fitHeight="140.0" fitWidth="134.0" layoutX="33.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../images/Manageprofile-1_adobespark.png" />
+								<Image url="@../images/Manage_Profile.png" />
 							</image>
 						</ImageView>
 						<Label layoutX="59.0" layoutY="159.0" text="Manage Profile" textFill="#137c65">

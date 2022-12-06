@@ -242,6 +242,7 @@ public class ManagerModel extends Project {
 
 	public List<ManagerModel> getBooking() {
 		List<ManagerModel> bookings = new ArrayList<>();
+		//System.out.println("here");
 		String query = "SELECT custname, custcity,  roomtype, numberofpeople, roomprice, startdate, enddate, roomnumber FROM bookings_2711";
 		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();

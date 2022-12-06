@@ -178,7 +178,7 @@ public class CRUDModel extends Project {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("id"));
+				setId(rs.getInt("admin_id"));
 				setAdmin(rs.getString("status").equals("true"));
 				return true;
 			}
@@ -197,7 +197,7 @@ public class CRUDModel extends Project {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("id"));
+				setId(rs.getInt("manager_id"));
 				setAdmin(rs.getString("status") == "true" );
 				return true;
 			}
@@ -216,7 +216,7 @@ public class CRUDModel extends Project {
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 
-				setId(rs.getInt("id"));
+				setId(rs.getInt("admin_id"));
 				setAdmin(rs.getString("status").equals("true"));
 				setAdminAge(rs.getInt("age"));
 				setAdminName(rs.getString("name"));

@@ -138,8 +138,9 @@ public class CustomerManageProfileController implements Initializable {
 			}
 			OracleConnection.close();
 
-		} catch (SQLException se) {
-			se.printStackTrace();
+		} catch (Exception se) {
+			dialog.handleDialog("Failed", "UserName or EmailID already exists", customerstackepanemanageprofile,
+					"/views/CustomerPageView.fxml","Admin Login");
 		}
 
 	}

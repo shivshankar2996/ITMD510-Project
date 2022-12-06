@@ -101,13 +101,13 @@ public class AdminManagerModel extends Project {
 
 	public ObservableList<AdminManagerModel> getAdmins() {
 		ObservableList<AdminManagerModel> admins = FXCollections.observableArrayList();
-		String query = "SELECT id, name, email, status FROM admins_2711";
+		String query = "SELECT admin_id, name, email, status FROM admins_2711";
 		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				AdminManagerModel admin = new AdminManagerModel();
 				// grab record data by table field name into ClientModel account object
-				admin.setAid(resultSet.getInt("id"));
+				admin.setAid(resultSet.getInt("admin_id"));
 				admin.setAname(resultSet.getString("name"));
 				admin.setAemail(resultSet.getString("email"));
 				admin.setAstatus(resultSet.getString("status"));
@@ -154,7 +154,11 @@ public class AdminManagerModel extends Project {
 		}
 		}*/
 		public void updateTable(int id) {
+<<<<<<< HEAD
+			String query = "update admins_2711 set status = 'true' where admin_id=" + id + "";
+=======
 			String query = "update admins_2711 set status = 'true' where id=" + id + "";
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 				try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 				int count = stmt.executeUpdate();
 				if (count > 0) {

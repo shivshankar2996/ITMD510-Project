@@ -231,7 +231,7 @@ public class CustomerModel extends Project {
 			stmt.setString(1, custname);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				setId(rs.getInt("id"));
+				setId(rs.getInt("customer_id"));
 				setCustomerStatus(rs.getString("status").equals("true"));
 				setCustomerAge(rs.getInt("age"));
 				setCustomerName(rs.getString("name"));

@@ -126,8 +126,9 @@ public class CustomerReservationController {
 
 	@FXML
 	public void onSearchName() {
-
 		String searchText = txtSearchCust.getText().toString();
+		System.out.println(searchText);
+
 		if (searchText == "" || searchText == null) {
 			handleDialog("Please enter valid name");
 		} else {

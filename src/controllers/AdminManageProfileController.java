@@ -140,9 +140,9 @@ public class AdminManageProfileController implements Initializable {
 			}
 			OracleConnection.close();
 
-		} catch (SQLException se) {
-			se.printStackTrace();
-		}
+		} catch (Exception se) {
+			dialog.handleDialog("Failed", "UserName or EmailID already exists", stackepanemanageprofile,
+					"/views/AdminView.fxml","Admin Login");		}
 
 	}
 

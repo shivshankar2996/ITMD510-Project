@@ -113,8 +113,10 @@ public class AdminRegisterController {
 			String sql = "INSERT INTO admins_2711 (username, password, name, age, email, city, state, pincode, status) VALUES ('"
 					+ adminRegisterUsername + "','" + adminRegisterPassword + "','" + adminRegisterName + "',"
 					+ adminRegisterAge + ",'" + adminRegisterEmail + "','" + adminRegisterCity + "','"
-					+ adminRegisterState + "'," + adminRegisterPincode + ",'true' )";
-				int c = stmt.executeUpdate(sql);
+					+ adminRegisterState + "'," + adminRegisterPincode + ",'false' )";
+			System.out.println(sql);
+	
+			int c = stmt.executeUpdate(sql);
 			if (c > 0)
 				dialog.handleDialog("Success", "Admin registered Successfully!", adminregistrationstackpane,
 						"/views/AdminView.fxml","Admin Login");
@@ -122,6 +124,10 @@ public class AdminRegisterController {
 			// close opened connection.
 			OracleConnection.close();
 		} catch (Exception e) {
+<<<<<<< HEAD
+			System.out.println("admin reg fail");
+=======
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 			dialog.handleDialog("Failed", "UserName or EmailID already exists", adminregistrationstackpane,
 					"/views/AdminView.fxml","Admin Login");
 		}

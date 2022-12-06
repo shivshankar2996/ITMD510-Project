@@ -57,8 +57,8 @@ public class AdminLoginController {
 	public void onAdminLogin() throws SQLException {
 		String username = this.txtAdminUsername.getText();
 		String password = this.txtAdminPassword.getText();
-System.out.println(password);
-System.out.println(username);
+//System.out.println(password);
+//System.out.println(username);
 		// Validations
 		if (username == null || username.trim().equals("")) {
 			lblError.setText("Username Cannot be empty or spaces");
@@ -93,15 +93,16 @@ System.out.println(username);
 	private void checkCredentials(String username, String password) throws SQLException {
 		// TODO Auto-generated method stub
 		Boolean isValid = model.getCredentials(username, password);
-		System.out.println(username);
-		System.out.println(password);
-		System.out.println(model.isAdmin());
+		//System.out.println(username);
+		//System.out.println(password);
+		System.out.println(model.isAdmin()+"123");
 		System.out.println(isValid);
 		if (!isValid) {
 			lblError.setText("User does not exist!");
 			return;
 		}
 		try {
+			//System.out.println(model.isAdmin()+"123");
 			//if (model.isAdmin() && isValid) {
 			if (isValid) {
 				// If user is admin, inflate admin view

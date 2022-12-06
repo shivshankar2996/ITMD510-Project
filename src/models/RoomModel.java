@@ -170,6 +170,19 @@ public class RoomModel extends Project {
 		return result;
 	}*/
 	
+	public int deleteRoomByRoomNumber(int roomNumber) {
+		int result = 0;
+		String query = "DELETE FROM  rooms_2711 WHERE roomnumber=?";
+		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {
+			//statement.setString(1, "available");
+			statement.setInt(1, roomNumber);
+			result = statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error Deleting Room Info: " + e);
+		}
+		return result;
+	}
+	
 	public void findRoomByRoomNumber(int roomNumber) {
 		String query = "select * from  rooms_2711 WHERE roomstatus='available' and roomnumber=?";
 		try (PreparedStatement statement = OracleConnection.prepareStatement(query)) {

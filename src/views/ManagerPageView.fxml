@@ -15,7 +15,11 @@
 			<children>
 				<Pane fx:id="manageradmin_pane" layoutX="50.0" layoutY="45.0" onMouseClicked="#manageAdminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="193.0" prefWidth="188.0">
 					<children>
+<<<<<<< HEAD
 						<ImageView fitHeight="133.0" fitWidth="140.0" layoutX="29.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+=======
+						<ImageView fitHeight="133.0" fitWidth="140.0" layoutX="28.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 							<image>
 								<Image url="@../images/Manager_Admin.png" />
 							</image>

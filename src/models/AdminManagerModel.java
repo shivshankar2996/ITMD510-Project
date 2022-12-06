@@ -154,7 +154,11 @@ public class AdminManagerModel extends Project {
 		}
 		}*/
 		public void updateTable(int id) {
+<<<<<<< HEAD
 			String query = "update admins_2711 set status = 'true' where admin_id=" + id + "";
+=======
+			String query = "update admins_2711 set status = 'true' where id=" + id + "";
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 				try (PreparedStatement stmt = OracleConnection.prepareStatement(query)) {
 				int count = stmt.executeUpdate();
 				if (count > 0) {

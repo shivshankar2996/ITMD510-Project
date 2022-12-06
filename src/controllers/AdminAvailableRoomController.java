@@ -184,9 +184,14 @@ public class AdminAvailableRoomController implements Initializable {
 				alert.showAndWait();
 			}
 		}
+<<<<<<< HEAD
 	}/*
 	@FXML
 	
+=======
+	}
+	@FXML
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 	void DeleteRoom1(ActionEvent event) {
 		String searchText = txtSearch.getText().toString();
 
@@ -197,7 +202,11 @@ public class AdminAvailableRoomController implements Initializable {
 			roomList = roomModel.getRooms(query);
 			loadData(query);
 		}
+<<<<<<< HEAD
 	}*/
+=======
+	}
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 	
 	@FXML
 	public void onAvailableRooms() {

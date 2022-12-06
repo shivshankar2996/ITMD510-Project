@@ -124,7 +124,10 @@ public class AdminRegisterController {
 			// close opened connection.
 			OracleConnection.close();
 		} catch (Exception e) {
+<<<<<<< HEAD
 			System.out.println("admin reg fail");
+=======
+>>>>>>> 6ac56e0ee1b1bfa77e2b818c51fde5bda82ae955
 			dialog.handleDialog("Failed", "UserName or EmailID already exists", adminregistrationstackpane,
 					"/views/AdminView.fxml","Admin Login");
 		}

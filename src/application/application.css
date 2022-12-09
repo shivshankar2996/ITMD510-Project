@@ -6,8 +6,9 @@
      -fx-cursor:pointer;  
    }
 .button{
-	    -fx-background-color: #b9edcf; 	/*#DEB887;*/
+	    -fx-background-color: #86b59a; 	/*#DEB887;*/
         -fx-font-color:white;
+        -fx-button-border:#035744;
         -fx-background-radius:50;
 }
 .button:hover{

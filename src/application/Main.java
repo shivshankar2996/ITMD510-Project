@@ -28,7 +28,6 @@ public class Main extends Application {
 		} catch (Exception e) {
 			System.out.println("Error occured while inflating view: " + e);
 		}
-
 	}
 
 	public static void main(String[] args) {

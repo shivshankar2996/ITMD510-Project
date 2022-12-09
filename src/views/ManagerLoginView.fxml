@@ -4,25 +4,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="manager_view_pane" prefHeight="410.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerLoginController">
 	<children>
 
-		<Label fx:id="lblError" layoutX="348.0" layoutY="287.0" style="-fx-background-color: #FFFFFF;" textFill="RED">
+		<Label fx:id="lblError" layoutX="348.0" layoutY="350.0" style="-fx-background-color: #FFFFFF;" textFill="RED">
          <font>
             <Font size="14.0" />
          </font></Label>
-		<Button layoutX="437.0" layoutY="214.0" mnemonicParsing="false" onAction="#onManagerLogin" prefHeight="25.0" prefWidth="150.0" text="Login" textFill="#137c65">
-			<font>
-				<Font name="System Bold" size="13.0" />
-			</font>
-		</Button>
-		<TextField fx:id="txtManagerUsername" layoutX="437.0" layoutY="90.0" promptText="USER NAME" />
-		<PasswordField fx:id="txtManagerPassword" layoutX="437.0" layoutY="157.0" promptText="PASSWORD" />
 		<Button layoutX="294.0" layoutY="20.0" mnemonicParsing="false" onAction="#onManagerBackButton" prefHeight="27.0" prefWidth="54.0" text="Back" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
@@ -37,15 +32,34 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="410.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/UserID.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="411.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/Password.png" />
-         </image>
-      </ImageView>
+      <Pane layoutX="344.0" layoutY="80.0" prefHeight="230.0" prefWidth="210.0" style="-fx-background-color: #e0dede; -fx-background-radius: 20; -fx-border-color: #137c65; -fx-border-radius: 20;">
+         <children>
+            <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="9.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/UserID.png" />
+               </image>
+            </ImageView>
+      		<PasswordField fx:id="txtManagerPassword" layoutX="42.0" layoutY="130.0" promptText="PASSWORD" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5; -fx-bordER-color: #137c65;" />
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="14.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Password.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="8.0" layoutY="15.0" text="Manager Login" textFill="#137c65">
+               <font>
+                  <Font name="Vladimir Script" size="36.0" />
+               </font>
+            </Label>
+      		<Button layoutX="30.0" layoutY="177.0" mnemonicParsing="false" onAction="#onManagerLogin" prefHeight="25.0" prefWidth="150.0" text="Login" textFill="#137c65">
+      			<font>
+      				<Font name="System Bold" size="13.0" />
+      			</font>
+      		</Button>
+      		<TextField fx:id="txtManagerUsername" layoutX="39.0" layoutY="83.0" promptText="USER NAME" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 1.5; -fx-border-radius: 15;" />
+         </children>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" height="41.03" radius="24.4125" spread="0.02" width="58.62" />
+         </effect>
+      </Pane>
 	</children>
 </AnchorPane>

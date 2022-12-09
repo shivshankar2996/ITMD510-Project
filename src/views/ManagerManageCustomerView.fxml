@@ -3,22 +3,29 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="manager_manage_customer_view_pane" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerManageCustomerController">
+<AnchorPane fx:id="manager_manage_customer_view_pane" opacity="0.95" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerManageCustomerController">
 	<children>
-		<Button layoutX="32.0" layoutY="41.0" mnemonicParsing="false" onAction="#onManageCustomerBack" prefHeight="27.0" prefWidth="75.0" text="Back" textFill="#137c65">
+		<Button layoutX="32.0" layoutY="37.0" mnemonicParsing="false" onAction="#onManageCustomerBack" prefHeight="27.0" prefWidth="75.0" text="Back" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
 			</font>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Button>
-		<Button layoutX="574.0" layoutY="41.0" mnemonicParsing="false" onAction="#onManageCustomerExit" prefHeight="27.0" prefWidth="75.0" text="Exit" textFill="#137c65">
+		<Button layoutX="32.0" layoutY="80.0" mnemonicParsing="false" onAction="#onManageCustomerExit" prefHeight="27.0" prefWidth="75.0" text="Exit" textFill="#137c65">
 			<font>
 				<Font name="System Bold" size="13.0" />
 			</font>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Button>
-		<TableView fx:id="tblCustomers" layoutX="26.0" layoutY="129.0" prefHeight="451.0" prefWidth="623.0">
+		<TableView fx:id="tblCustomers" layoutX="26.0" layoutY="129.0" prefHeight="451.0" prefWidth="650.0" style="-fx-border-color: #137c65; -fx-border-width: 2;">
 			<columns>
 				<TableColumn fx:id="cname" prefWidth="67.0" text="Name" />
 				<TableColumn fx:id="ccity" prefWidth="56.0" text="City" />
@@ -29,11 +36,17 @@
 				<TableColumn fx:id="startdate" text="Start Date" />
 				<TableColumn fx:id="enddate" prefWidth="100.0" text="End Date" />
 			</columns>
+         <effect>
+            <DropShadow />
+         </effect>
 		</TableView>
-		<Button layoutX="242.0" layoutY="87.0" mnemonicParsing="false" onAction="#onRefreshCustomerList" prefHeight="27.0" prefWidth="175.0" text="Refresh Reservation List" textFill="#137c65">
+		<Button layoutX="458.0" layoutY="67.0" mnemonicParsing="false" onAction="#onRefreshCustomerList" opacity="0.98" prefHeight="42.0" prefWidth="215.0" text="Refresh Reservation List" textFill="#137c65">
 			<font>
-				<Font name="System Bold" size="13.0" />
+				<Font name="Book Antiqua" size="13.0" />
 			</font>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Button>
 
 	</children>

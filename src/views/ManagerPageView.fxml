@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,14 +13,17 @@
 <StackPane fx:id="stackepane_managerpageview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ManagerPageController">
 	<children>
 
-		<AnchorPane fx:id="manager_anchor_pane" prefHeight="500.0" prefWidth="600.0">
+		<AnchorPane fx:id="manager_anchor_pane" opacity="0.95" prefHeight="500.0" prefWidth="600.0">
 			<children>
-				<Pane fx:id="manageradmin_pane" layoutX="50.0" layoutY="45.0" onMouseClicked="#manageAdminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="193.0" prefWidth="188.0">
+				<Pane fx:id="manageradmin_pane" layoutX="61.0" layoutY="134.0" onMouseClicked="#manageAdminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="193.0" prefWidth="188.0" style="-fx-background-radius: 15; -fx-opacity: 0.85;">
 					<children>
-						<ImageView fitHeight="170.0" fitWidth="170.0" layoutX="7.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="114.0" fitWidth="117.0" layoutX="38.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../images/customer-1_adobespark.png" />
+								<Image url="@../images/Manager_Admin.png" />
 							</image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
 						</ImageView>
 						<Label layoutX="48.0" layoutY="159.0" text="Manage Admin " textFill="#137c65">
 							<font>
@@ -26,34 +31,49 @@
 							</font>
 						</Label>
 					</children>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Pane>
-				<Pane fx:id="managerlogout_pane" layoutX="205.0" layoutY="276.0" onMouseClicked="#managerLogoutClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="193.0" prefWidth="188.0">
+				<Pane fx:id="managerlogout_pane" layoutX="34.0" layoutY="414.0" onMouseClicked="#managerLogoutClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="70.0" prefWidth="134.0">
 					<children>
-						<ImageView fitHeight="150.0" fitWidth="180.0" layoutX="19.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="57.0" fitWidth="44.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../images/logout.jpg" />
+								<Image url="@../images/logout.png" />
 							</image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
 						</ImageView>
-						<Label layoutX="70.0" layoutY="158.0" text="Logout" textFill="#137c65">
+						<Label layoutX="69.0" layoutY="22.0" prefHeight="28.0" prefWidth="58.0" text="Logout" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
 						</Label>
 					</children>
+               <effect>
+                  <Blend />
+               </effect>
 				</Pane>
-				<Pane fx:id="managercustomer_pane" layoutX="344.0" layoutY="41.0" onMouseClicked="#manageCustomerClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="193.0" prefWidth="188.0">
+				<Pane fx:id="managercustomer_pane" layoutX="355.0" layoutY="138.0" onMouseClicked="#manageCustomerClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="186.0" prefWidth="188.0" style="-fx-background-radius: 15; -fx-opacity: 0.85;">
 					<children>
 						<Label layoutX="24.0" layoutY="157.0" text="Customer Reservations" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="13.0" />
 							</font>
 						</Label>
-						<ImageView fitHeight="120.0" fitWidth="175.0" layoutX="23.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+						<ImageView fitHeight="120.0" fitWidth="175.0" layoutX="34.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
 							<image>
-								<Image url="@../images/managecustomer-1_adobespark.png" />
+								<Image url="@../images/Manager_rev.png" />
 							</image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
 						</ImageView>
 					</children>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Pane>
 			</children>
 		</AnchorPane>

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
@@ -13,43 +14,54 @@
 	<children>
 		<AnchorPane prefHeight="500.0" prefWidth="730.0">
 			<children>
-				<Pane fx:id="customer_pane" layoutX="37.0" layoutY="97.0" prefHeight="80.0" prefWidth="277.0" style="-fx-background-color: #ccc;">
+				<Pane fx:id="customer_pane" layoutX="37.0" layoutY="97.0" opacity="0.86" prefHeight="80.0" prefWidth="277.0" style="-fx-background-radius: 15; -fx-background-color: #e1ebe5; -fx-border-color: #137c65; -fx-border-radius: 15;">
 					<children>
-						<TextField fx:id="txtSearchCust" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Your Name" />
-						<Button layoutX="153.0" layoutY="37.0" mnemonicParsing="false" onAction="#onSearchName" text="Search Yourself" textFill="#137c65">
+						<TextField fx:id="txtSearchCust" layoutX="14.0" layoutY="40.0" prefHeight="25.0" prefWidth="114.0" promptText="Enter Your Name" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<Button layoutX="153.0" layoutY="40.0" mnemonicParsing="false" onAction="#onSearchName" text="Search Yourself" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="12.0" />
 							</font>
 						</Button>
+                  <Label layoutX="14.0" layoutY="10.0" text="Enter your Name:" textFill="#137c65" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
 					</children>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Pane>
 
-				<Label layoutX="290.0" layoutY="49.0" text="Booking Room" textFill="#137c65">
+				<Label layoutX="263.0" layoutY="20.0" prefHeight="56.0" prefWidth="216.0" style="-fx-background-color: #e1ebe5; -fx-background-radius: 20; -fx-border-color: #FFFFFF; -fx-border-radius: 20; -fx-border-width: 2;" text="Booking Room" textFill="#137c65" underline="true">
 					<font>
-						<Font name="System Bold" size="18.0" />
+						<Font name="Vladimir Script" size="40.0" />
 					</font>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Label>
-				<Button layoutX="37.0" layoutY="24.0" mnemonicParsing="false" onAction="#onBackBtn" text="Back" textFill="#137c65">
+				<Button layoutX="37.0" layoutY="21.0" mnemonicParsing="false" onAction="#onBackBtn" text="Back" textFill="#137c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Button>
-				<Button layoutX="652.0" layoutY="449.0" mnemonicParsing="false" onAction="#onExitBtn" text="Exit">
+				<Button layoutX="40.0" layoutY="59.0" mnemonicParsing="false" onAction="#onExitBtn" text="Exit">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Button>
-				<Pane fx:id="reservation_pane" layoutX="365.0" layoutY="94.0" prefHeight="341.0" prefWidth="287.0" style="-fx-background-color: #D5B3AC;" visible="false">
+				<Pane fx:id="reservation_pane" layoutX="365.0" layoutY="94.0" prefHeight="341.0" prefWidth="287.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-radius: 15;" visible="false">
 					<children>
 						<Label layoutX="24.0" layoutY="70.0" text="Room Type" />
-						<TextField fx:id="txtRoomType" editable="false" layoutX="119.0" layoutY="65.0" prefHeight="25.0" prefWidth="142.0" />
-						<TextField fx:id="txtRoomNo" layoutX="23.0" layoutY="30.0" prefHeight="25.0" prefWidth="142.0" promptText="Room Number" />
+						<TextField fx:id="txtRoomType" editable="false" layoutX="119.0" layoutY="65.0" prefHeight="25.0" prefWidth="142.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<TextField fx:id="txtRoomNo" layoutX="23.0" layoutY="30.0" prefHeight="25.0" prefWidth="142.0" promptText="Room Number" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
 
 						<Label layoutX="24.0" layoutY="105.0" text="No of People" />
-						<TextField fx:id="txtNoOfPpl" editable="false" layoutX="119.0" layoutY="101.0" prefHeight="25.0" prefWidth="142.0" />
+						<TextField fx:id="txtNoOfPpl" editable="false" layoutX="119.0" layoutY="101.0" prefHeight="25.0" prefWidth="142.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
 
 						<Label layoutX="24.0" layoutY="140.0" text="Room Price" />
-						<TextField fx:id="txtRoomPrice" editable="false" layoutX="119.0" layoutY="136.0" prefHeight="25.0" prefWidth="142.0" />
+						<TextField fx:id="txtRoomPrice" editable="false" layoutX="119.0" layoutY="136.0" prefHeight="25.0" prefWidth="142.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
 
 						<Label layoutX="24.0" layoutY="175.0" text="Start Date" />
 						<DatePicker fx:id="dateStartField" layoutX="119.0" layoutY="175.0" prefWidth="142.0" />
@@ -58,27 +70,33 @@
 						<DatePicker fx:id="dateEndField" layoutX="119.0" layoutY="210.0" prefWidth="142.0" />
 
 						<Label layoutX="24.0" layoutY="245.0" text="Service Fees" />
-						<TextField fx:id="txtServiceFees" editable="false" layoutX="119.0" layoutY="245.0" prefHeight="25.0" prefWidth="142.0" text="10" />
+						<TextField fx:id="txtServiceFees" editable="false" layoutX="119.0" layoutY="245.0" prefHeight="25.0" prefWidth="142.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" text="10" />
 
 						<Label layoutX="24.0" layoutY="280.0" text="Total" />
-						<TextField fx:id="txtTotal" editable="false" layoutX="119.0" layoutY="280.0" prefHeight="25.0" prefWidth="142.0" />
+						<TextField fx:id="txtTotal" editable="false" layoutX="119.0" layoutY="280.0" prefHeight="25.0" prefWidth="142.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
 						<Button layoutX="177.0" layoutY="30.0" mnemonicParsing="false" onAction="#findRoom" prefHeight="25.0" prefWidth="82.0" text="Find Room" />
 
 					</children>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Pane>
-				<Pane fx:id="custinfo_pane" layoutX="37.0" layoutY="220.0" prefHeight="215.0" prefWidth="277.0" style="-fx-background-color: #D5B3AC;" visible="false">
+				<Pane fx:id="custinfo_pane" layoutX="37.0" layoutY="220.0" prefHeight="215.0" prefWidth="277.0" style="-fx-background-radius: 15; -fx-background-color: #e1ebe5; -fx-border-color: #137c65; -fx-border-radius: 15;" visible="false">
 					<children>
 						<Label layoutX="14.0" layoutY="10.0" text="Name" />
 						<Label layoutX="14.0" layoutY="45.0" text="Age" />
 						<Label layoutX="14.0" layoutY="80.0" text="City" />
 						<Label layoutX="14.0" layoutY="115.0" text="State" />
 						<Label layoutX="14.0" layoutY="150.0" text="PinCode" />
-						<TextField fx:id="txtName" layoutX="67.0" layoutY="10.0" />
-						<TextField fx:id="txtAge" layoutX="67.0" layoutY="45.0" />
-						<TextField fx:id="txtCity" layoutX="67.0" layoutY="80.0" />
-						<TextField fx:id="txtState" layoutX="67.0" layoutY="115.0" />
-						<TextField fx:id="txtPincode" layoutX="67.0" layoutY="150.0" />
+						<TextField fx:id="txtName" layoutX="67.0" layoutY="10.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<TextField fx:id="txtAge" layoutX="67.0" layoutY="45.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<TextField fx:id="txtCity" layoutX="67.0" layoutY="80.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<TextField fx:id="txtState" layoutX="67.0" layoutY="115.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
+						<TextField fx:id="txtPincode" layoutX="67.0" layoutY="150.0" style="-fx-background-radius: 15; -fx-border-color: #137c65; -fx-border-width: 2; -fx-border-radius: 15;" />
 					</children>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</Pane>
 				<Button fx:id="bookBtn" layoutX="230.0" layoutY="442.0" mnemonicParsing="false" onAction="#onBookingClicked" prefHeight="30.0" prefWidth="142.0" text="Book Room" visible="false">
 					<font>

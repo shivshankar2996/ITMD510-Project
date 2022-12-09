@@ -40,6 +40,8 @@ public class ManagerManageAdminController implements Initializable {
 	private TableColumn<AdminManagerModel, String> astatus;
 	@FXML
 	private TableColumn<AdminManagerModel, String> actionButton;
+	@FXML
+	private TableColumn<AdminManagerModel, String> actionButton1;
 
 	private ObservableList<AdminManagerModel> mgrAdmins;
 
@@ -115,8 +117,9 @@ public class ManagerManageAdminController implements Initializable {
 				return cell;
 			}
 		};
-
+System.out.println(cellFactory);
 		actionButton.setCellFactory(cellFactory);
+		actionButton1.setCellFactory(cellFactory);
 
 		// auto adjust width of columns depending on their content
 		tblAdmins.setItems(mgrAdmins);

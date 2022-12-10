@@ -155,6 +155,19 @@ public class RoomModel {
 		return result;
 	}
 	
+	public int DeletedRoomByRoomNumber(int roomNumber) {
+		int result = 0;
+		String query = "Delete from rooms_2711 WHERE roomnumber=?";
+		try (PreparedStatement statement = conn.getConnection().prepareStatement(query)) {
+			statement.setInt(1, roomNumber);
+			//statement.setInt(2, roomNumber);
+			result = statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Error Deleting Room Info: " + e);
+		}
+		return result;
+	}
+	
 	public void findRoomByRoomNumber(int roomNumber) {
 		String query = "select * from  rooms_2711 WHERE roomstatus='available' and roomnumber=?;";
 		try (PreparedStatement statement = conn.getConnection().prepareStatement(query)) {

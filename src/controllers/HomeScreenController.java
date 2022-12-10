@@ -51,7 +51,7 @@ public class HomeScreenController implements Initializable {
 
 	@FXML
 	private void mouse_hover_1(MouseEvent event) {
-		home_admin_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 6px;");
+		home_admin_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius:0 50 0 50;");
 	}
 
 	@FXML
@@ -61,7 +61,7 @@ public class HomeScreenController implements Initializable {
 
 	@FXML
 	private void mouse_hover_2(MouseEvent event) {
-		home_customer_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 6px;");
+		home_customer_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 0 50 0 50;");
 	}
 
 	@FXML
@@ -71,7 +71,7 @@ public class HomeScreenController implements Initializable {
 
 	@FXML
 	private void mouse_hover_3(MouseEvent event) {
-		home_exit_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 6px;");
+		home_exit_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 0 50 0 50;");
 	}
 
 	@FXML
@@ -81,7 +81,7 @@ public class HomeScreenController implements Initializable {
 
 	@FXML
 	private void mouse_hover_4(MouseEvent event) {
-		home_manager_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 6px;");
+		home_manager_pane.setStyle("-fx-background-color: #377ce8; -fx-background-radius: 0 50 0 50;");
 	}
 
 	@FXML

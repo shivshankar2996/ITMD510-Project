@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.BoxBlur?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,14 +11,14 @@
 
 <AnchorPane fx:id="home_pane" prefHeight="500.0" prefWidth="600.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomeScreenController">
 	<children>
-		<Pane fx:id="home_admin_pane" blendMode="SRC_ATOP" layoutX="76.0" layoutY="80.0" onMouseClicked="#adminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="145.0" prefWidth="169.0" styleClass="most-contacted-layout" stylesheets="@../application/application.css" AnchorPane.leftAnchor="76.0">
+		<Pane fx:id="home_admin_pane" blendMode="SRC_ATOP" layoutX="99.0" layoutY="90.0" onMouseClicked="#adminClicked" onMouseEntered="#mouse_hover_1" onMouseExited="#mouse_exit_1" prefHeight="145.0" prefWidth="169.0" style="-fx-background-radius: 0 50 0 50;" styleClass="most-contacted-layout" stylesheets="@../application/application.css" AnchorPane.leftAnchor="99.0">
 			<children>
 				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="24.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" styleClass="most-contacted-layout">
 					<image>
 						<Image url="@../images/Admin.png" />
 					</image>
                <effect>
-                  <Glow />
+                  <DropShadow />
                </effect>
 				</ImageView>
 				<Label layoutX="62.0" layoutY="122.0" text="Admin" textFill="#137c65">
@@ -30,8 +27,11 @@
 					</font>
 				</Label>
 			</children>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Pane>
-		<Pane fx:id="home_customer_pane" layoutX="359.0" layoutY="80.0" onMouseClicked="#customerClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="145.0" prefWidth="169.0">
+		<Pane fx:id="home_customer_pane" layoutX="324.0" layoutY="90.0" onMouseClicked="#customerClicked" onMouseEntered="#mouse_hover_2" onMouseExited="#mouse_exit_2" prefHeight="145.0" prefWidth="169.0" style="-fx-background-radius: 0 50 0 50;">
 			<children>
 				<Label layoutX="56.0" layoutY="122.0" text="Customer" textFill="#137c65">
 					<font>
@@ -42,57 +42,65 @@
 					<image>
 						<Image url="@../images/Customer.png" />
 					</image>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</ImageView>
 			</children>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Pane>
-		<Pane fx:id="home_exit_pane" layoutX="76.0" layoutY="250.0" onMouseClicked="#exitClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="145.0" prefWidth="169.0">
+		<Pane fx:id="home_exit_pane" layoutX="99.0" layoutY="270.0" onMouseClicked="#exitClicked" onMouseEntered="#mouse_hover_3" onMouseExited="#mouse_exit_3" prefHeight="145.0" prefWidth="169.0" style="-fx-background-radius: 0 50 0 50;">
 			<children>
-				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+				<ImageView fitHeight="116.0" fitWidth="120.0" layoutX="27.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
 					<image>
 						<Image url="@../images/Exit.png" />
 					</image>
+               <effect>
+                  <DropShadow />
+               </effect>
 				</ImageView>
-				<Label layoutX="64.0" layoutY="122.0" text="Exit" textFill="#137c65">
+				<Label layoutX="72.0" layoutY="125.0" text="Exit" textFill="#137c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Label>
 			</children>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Pane>
-		<Pane fx:id="home_manager_pane" layoutX="358.0" layoutY="250.0" onMouseClicked="#managerClicked" onMouseEntered="#mouse_hover_4" onMouseExited="#mouse_exit_4" prefHeight="145.0" prefWidth="169.0">
+		<Pane fx:id="home_manager_pane" layoutX="322.0" layoutY="270.0" onMouseClicked="#managerClicked" onMouseEntered="#mouse_hover_4" onMouseExited="#mouse_exit_4" prefHeight="145.0" prefWidth="169.0" style="-fx-background-radius: 0 50 0 50;">
 			<children>
 				<Label layoutX="57.0" layoutY="122.0" text="Manager" textFill="#137c65">
 					<font>
 						<Font name="System Bold" size="13.0" />
 					</font>
 				</Label>
-      				<ImageView fitHeight="110.0" fitWidth="120.0" layoutX="22.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+      				<ImageView fitHeight="110.0" fitWidth="120.0" layoutX="31.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
       					<image>
       						<Image url="@../images/manager.png" />
       					</image>
+               <effect>
+                  <DropShadow />
+               </effect>
       				</ImageView>
 			</children>
+         <effect>
+            <DropShadow />
+         </effect>
 		</Pane>
-      <Label layoutX="100.0" layoutY="26.0" styleClass="title" text="Management Platform for Hotel - Motel Bookings " textAlignment="CENTER" textFill="#0be8b4" textOverrun="CLIP" underline="true" wrapText="true">
+      <Label layoutX="86.0" layoutY="31.0" styleClass="title" text="Management Platform for Hotel - Motel Bookings " textAlignment="CENTER" textFill="#18b58e" textOverrun="CLIP" underline="true" wrapText="true">
          <font>
-            <Font size="18.0" />
+            <Font name="Vladimir Script" size="18.0" />
          </font>
          <effect>
-            <Lighting diffuseConstant="0.93" specularConstant="0.53" specularExponent="24.14" surfaceScale="2.42">
-               <bumpInput>
-                  <Glow>
-                     <input>
-                        <BoxBlur />
-                     </input>
-                  </Glow>
-               </bumpInput>
-               <light>
-                  <Light.Distant>
-                     <color>
-                        <Color red="0.07450980693101883" green="0.48627451062202454" blue="0.3960784375667572" />
-                     </color></Light.Distant> 
-               </light>
-            </Lighting>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
          </effect>
       </Label>
 	</children>

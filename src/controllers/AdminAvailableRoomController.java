@@ -132,7 +132,7 @@ public class AdminAvailableRoomController implements Initializable {
 				alert.setHeaderText("Modication");
 				alert.setContentText("Record updated successfully!");
 				alert.showAndWait();
-				String query = "SELECT * FROM  rooms_2711 where 1";
+				String query = "SELECT * FROM  rooms_2711";
 				roomList = roomModel.getRooms(query);
 				loadData(query);
 			} else {
@@ -144,6 +144,34 @@ public class AdminAvailableRoomController implements Initializable {
 			}
 		}
 	}
+	
+	@FXML
+	void DeleteRoom(ActionEvent event) {
+		String searchText = txtSearch.getText().toString();
+		if (searchText == "" || searchText == null) {
+			handleDialog();
+		} else {
+			int roomNo = Integer.parseInt(searchText);
+			int result = roomModel.DeletedRoomByRoomNumber(roomNo);
+			if (result > 0) {
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Room Info Deleted");
+				alert.setHeaderText("Deletion");
+				alert.setContentText("Record Deleted successfully!");
+				alert.showAndWait();
+				String query = "SELECT * FROM  rooms_2711";
+				roomList = roomModel.getRooms(query);
+				loadData(query);
+			} else {
+				Alert alert = new Alert(Alert.AlertType.INFORMATION);
+				alert.setTitle("Room Info Update");
+				alert.setHeaderText("Error");
+				alert.setContentText("Database Error!");
+				alert.showAndWait();
+			}
+		}
+	}
+
 
 	@FXML
 	public void onAvailableRooms() {

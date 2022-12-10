@@ -34,12 +34,12 @@
 					</effect>
 					<children>
 						<TextField fx:id="txtSearch" layoutX="12.0" layoutY="123.0" prefHeight="25.0" prefWidth="136.0" promptText="Enter Room No," style="-fx-border-color: #137C65; -fx-border-width: 1.5; -fx-border-radius: 15; -fx-background-radius: 15;" />
-						<Button fx:id="btnSearchRoomNo" contentDisplay="TEXT_ONLY" layoutX="6.0" layoutY="181.0" mnemonicParsing="false" onAction="#searchByRoomNo" prefHeight="53.0" prefWidth="149.0" style="-fx-padding: 10;" text="Search By Room No" textFill="#137c65">
+						<Button fx:id="btnSearchRoomNo" contentDisplay="TEXT_ONLY" layoutX="6.0" layoutY="163.0" mnemonicParsing="false" onAction="#searchByRoomNo" prefHeight="41.0" prefWidth="149.0" style="-fx-padding: 10;" text="Search By Room No" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="12.0" />
 							</font>
 						</Button>
-						<Button fx:id="btnMakeAvail" layoutX="7.0" layoutY="244.0" mnemonicParsing="false" onAction="#makeAvailableRoom" prefHeight="53.0" prefWidth="149.0" text="Make Available" textFill="#137c65">
+						<Button fx:id="btnMakeAvail" layoutX="7.0" layoutY="215.0" mnemonicParsing="false" onAction="#makeAvailableRoom" prefHeight="41.0" prefWidth="149.0" text="Make Available" textFill="#137c65">
 							<font>
 								<Font name="System Bold" size="12.0" />
 							</font>
@@ -48,6 +48,11 @@
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="13.0" />
                      </font></Label>
+                  <Button fx:id="btnMakeAvail11" layoutX="5.0" layoutY="268.0" mnemonicParsing="false" onAction="#DeleteRoom" prefHeight="41.0" prefWidth="149.0" text="Delete Room" textFill="#137c65">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
 
 					</children>
 				</Pane>

@@ -10,8 +10,8 @@ public class DBConnect  {
 	protected Connection connection;
 	public Connection getConnection() { return connection; }
 
-	private static String url = "jdbc:mysql://www.papademas.net:3307/510labs?autoReconnect=true&useSSL=false";
-	private static String username = "db510";
+	private static String url = "jdbc:mysql://www.papademas.net:3307/510fp?autoReconnect=true&useSSL=false";
+	private static String username = "fp510";
 	private static String password = "510";
 
 	public DBConnect() {

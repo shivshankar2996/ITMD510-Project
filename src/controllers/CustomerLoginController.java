@@ -64,8 +64,8 @@ System.out.println(password);*/
 
 	public void checkCredentials(String username, String password) {
 		Boolean isValid = model.getCredentials(username, password);
-		System.out.println(model.getCustomerStatus());
-		System.out.println(isValid);
+		System.out.println(username);
+		System.out.println(password);
 		if (!isValid) {
 			lblError.setText("Customer does not exist!");
 			return;

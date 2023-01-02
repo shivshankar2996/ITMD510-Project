@@ -84,6 +84,7 @@ public class ManagerManageAdminController implements Initializable {
 
 	public void loadData() {
 		mgrAdmins = mgrModel.getAdmins();
+		System.out.print("here");
 		editableCols();
 		aid.setCellValueFactory(new PropertyValueFactory<AdminManagerModel, String>("aid"));
 		aname.setCellValueFactory(new PropertyValueFactory<AdminManagerModel, String>("aname"));

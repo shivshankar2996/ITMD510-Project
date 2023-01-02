@@ -111,6 +111,7 @@ public class AdminManagerModel extends DBConnect {
 				admins.add(admin); // add account data to arraylist
 			}
 		} catch (SQLException e) {
+			e.printStackTrace();
 			System.out.println("Error fetching Admin Info: " + e);
 		}
 		return admins; // return arraylist

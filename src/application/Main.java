@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	public static Stage stage; // set global stage object!!!
+	public static Stage stage; 
+	
+	// set global stage object!!!
 
 	@Override
 	public void start(Stage primaryStage) {

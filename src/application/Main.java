@@ -12,7 +12,7 @@ public class Main extends Application {
 	public static Stage stage; // set global stage object!!!
 //text
 	//test
-	//demooooo
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {

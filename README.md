@@ -50,6 +50,8 @@ admin and manager.
  For customer login, click on customer icon
 
 ![App Screenshot](https://user-images.githubusercontent.com/112530146/211183999-babee23d-3930-48a8-91e5-e716cc6b0acf.png)
+![App Screenshot](https://user-images.githubusercontent.com/112530146/211184165-494d76d1-526c-4a93-aaaa-c286e0983346.png)
+
 
 Customer Login Page
 

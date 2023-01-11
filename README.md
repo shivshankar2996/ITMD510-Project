@@ -32,9 +32,10 @@ the list of bookings.
 ## Main Execution File & Login description
 
 The start-up run file is located in Application/main.java.
-## ERD Diagram
 
 [YouTube link](https://www.youtube.com/watch?v=7G0Ylp4fA-Y)
+
+## ERD Diagram
 
 ## Screenshots
 
